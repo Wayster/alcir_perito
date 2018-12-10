@@ -59,7 +59,7 @@
                     <h4 class="text-dark mb-4">Links Rapidos</h4>
                     <ul class="">
                         <li class="mb-3">
-                            <a href="canal/videos.php" class="text-dark">
+                            <a href="videos.php" class="text-dark">
                                 <i class="fa fa-arrow-circle-right"></i>
                                 Videos</a>
                         </li>
