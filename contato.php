@@ -99,46 +99,85 @@
             <div class="col-lg-7 mb-30">
                 <div class="default-form-area">
                     <h1>Entre em Contato</h1>
-                    <form id="contact-form" name="contact_form" class="contact-form style-five" action="inc/sendmail.php" method="post" novalidate>
+                    <form id="contact-form" name="contact_form" class="contact-form style-five" action="contato.php" method="post">
                         <div class="row clearfix">
                             <div class="col-md-6 column">
                                 <div class="form-group">
                                     <label>Nome</label>
-                                    <input name="form_name" class="form-control" value="" placeholder="" required type="text">
+                                    <input name="name" class="form-control" value="" placeholder="" required type="text">
                                 </div>
                             </div>
                             <div class="col-md-6 column">
                                 <div class="form-group">
                                     <label>Email</label>
-                                    <input name="form_email" class="form-control required email" value="" placeholder="" required  type="email">
+                                    <input name="email" class="form-control required email" value="" placeholder="" required  type="email">
                                 </div>
                             </div>
                             <div class="col-md-6 column">
                                 <div class="form-group">
                                     <label>Telefone</label>
-                                    <input name="form_phone" class="form-control" value="" placeholder="" type="text">
+                                    <input name="phone" class="form-control" value="" placeholder="" type="text">
                                 </div>
                             </div>
                             <div class="col-md-6 column">
                                 <div class="form-group">
                                     <label>Assunto</label>
-                                    <input name="form_subject" class="form-control" value="" placeholder="" type="text">
+                                    <input name="subject" class="form-control" value="" placeholder="" type="text">
                                 </div>
                             </div>
                             <div class="col-md-12 column">
                                 <div class="form-group">
                                     <label>Mensagem</label>
-                                    <textarea name="form_message" class="form-control textarea required" placeholder="" ></textarea>
+                                    <textarea name="message" class="form-control textarea required" placeholder="" ></textarea>
                                 </div>
                             </div>
                         </div>
                         <div class="contact-section-btn">
                             <div class="form-group style-two">
                                 <input id="form_botcheck" name="form_botcheck" class="form-control" value="" type="hidden">
-                                <button class="bttn" type="submit" data-loading-text="Please wait...">Enviar Agora</button>
+                                <button class="bttn" name="submit" type="submit" data-loading-text="Please wait...">Enviar Agora</button>
                             </div>
                         </div>
                     </form>
+                    <?php
+
+                    if(isset($_POST['submit'])){
+
+// Admin receives email through this code
+
+                        $sender_name = $_POST['name'];
+
+                        $sender_email = $_POST['email'];
+
+                        $sender_subject = $_POST['subject'];
+
+                        $phone = $_POST['phone'];
+
+                        $sender_message = $_POST['message'];
+
+                        $receiver_email = "contato@alcirperito.com.br";
+
+                        mail($receiver_email,$sender_name,$sender_subject,$sender_message,$sender_email, $phone);
+
+// Send email to sender through this code
+
+                        $email = $_POST['email'];
+
+                        $subject = "Bem Vindo a AR Pericia";
+
+                        $msg = "Responderemos em Breve, Obrigado pelo contato";
+
+                        $from = "contato@alcirperito.com.br";
+
+                        mail($email,$subject,$msg,$from);
+
+                        echo "<h2 align='center'>Your message has been sent successfully</h2>";
+
+                    }
+
+
+                    ?>
+
                 </div>
             </div>
             <div class="col-lg-5 mb-md-5 pl-lg-5">
