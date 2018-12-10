@@ -8,7 +8,8 @@
 
                         <!-- logo -->
                         <img src="css/imagens/ar.png" alt="Logo" class="img-fluid img-thumbnail mb-30">
-                        <p class="text-dark mb-30">Lorem ipsum dolor amet consectetur adipisicing elit sed eiusm tempor incididunt labore dolore magna aliqua enim.</p>
+                        <p class="text-dark mb-30">
+                            Há 17 anos trabalhamos junto aos escritórios de advocacia de Belo Horizonte e Região, e a partir de 2018, também passamos a atuar em Vitoria/ES e Região                        </p>
                         <!-- social icon -->
                         <ul class="list-inline">
                             <li class="list-inline-item">
@@ -79,20 +80,18 @@
                     </ul>
                 </div>
                 <!-- subscribe form -->
-                <div class="col-lg-3 col-md-12 offset-lg-1"  data-aos="fade-up" data-aos-duration="1000" data-aos-delay="1000">
-                    <div class="mt-5 mt-lg-0 text-center text-md-left">
-                        <h4 class="mb-4 text-dark">Receba Nossas Noticias</h4>
-                        <p class="text-dark mb-4">Lorem ipsum dolor sit amet, consect etur adipisicing. elit sed do
-                            eiusmod. </p>
-                        <form action="#" class="position-relative">
-                            <input type="text" class="form-control subscribe" name="subscribe" id="Subscribe" placeholder="Digite seu Email">
-                            <button class="btn-subscribe" type="submit" value="send">
-                                <i class="fas fa-envelope"></i>
-                            </button>
-                        </form>
+                <div class="col-lg-4 col-md-4" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+                    <div class="mb-5 mb-md-0 text-center text-md-left ">
+
+                        <!-- logo -->
+                        <img src="css/imagens/logoarle.png" alt="Logo" class="img-fluid img-thumbnail mb-30">
+                        <p class="text-dark mb-30">
+                            Alem de cursos abertos, trabalhamos  com cursos in company e  tambem realizamos treinamentos para pequenos grupos (máximo 4 participantes).                        </p>
+                        <!-- social icon -->
+
                     </div>
                 </div>
-            </div>
+    </div>
         </div>
     </div>
     <!-- copyright -->

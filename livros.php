@@ -11,6 +11,7 @@ include ('functions/functions.php');
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Livros</title>
+    <link rel="icon" href="css/imagens/home.ico">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/estilo2.css">
     <link rel="stylesheet" href="css/style.css">
@@ -58,7 +59,7 @@ include ('functions/functions.php');
                             <div class="header-logo-icon"> <i class="fa fa-envelope ml-4"></i> </div>
                             <div class="header-logo-text font-weight-bold text-center">
                                 <p>alcirpericia@bol.com.br</p>
-                                <p>contato@alcirpericia.com.br</p>
+                                <p>contato@alcirperito.com.br</p>
                             </div>
                         </div>
                     </div>

@@ -38,6 +38,7 @@ if (isset($_GET['curso_id'])) {
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
     <title>Detalhes</title>
+    <link rel="icon" href="css/imagens/home.ico">
 
     <link rel="stylesheet" href="css/bootstrap.min.css">
 
@@ -88,7 +89,7 @@ if (isset($_GET['curso_id'])) {
                             <div class="header-logo-icon"> <i class="fa fa-envelope ml-4"></i> </div>
                             <div class="header-logo-text font-weight-bold text-center">
                                 <p>alcirpericia@bol.com.br</p>
-                                <p>contato@alcirpericia.com.br</p>
+                                <p>contato@alcirperito.com.br</p>
                             </div>
                         </div>
                     </div>

@@ -11,6 +11,9 @@ include ('functions/functions.php');
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
+    <title>Meteriais Diversos</title>
+    <link rel="icon" href="css/imagens/home.ico">
+
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/estilo2.css">
@@ -127,7 +130,6 @@ include ('functions/functions.php');
                        while($rs = mysqli_fetch_array($query)){
                            $title = $rs['title'];
                            $descricao = $rs['descricao'];
-                           $data_up = $rs['data_up'];
                            $download =$rs['url'];
 
 
@@ -139,11 +141,6 @@ include ('functions/functions.php');
                               <span><?php echo $title ?></span>
                                <p><?php echo $descricao ?></p>
                            </td>
-                           <td>
-                               <span>Data</span>
-                               <p><?php echo $data_up ?></p>
-                           </td>
-
                            <td>
                                <a href='<?php echo $download ?>' target='_blank'><button class='btn btn-success btn-md'><span class="mx-4">download</span><i class="fas fa-file-download"></i></button></a>
                            </td>

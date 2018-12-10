@@ -10,6 +10,9 @@ include ('functions/functions.php');
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
+    <title>AR Pericia</title>
+    <link rel="icon" href="css/imagens/home.ico">
+
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/estilo2.css">
@@ -47,8 +50,8 @@ include ('functions/functions.php');
                 <div class="row">
                     <div class="col-md-4 col-sm-4 col-lg-6 col-xl-6">
                         <div class="header-logo-address">
-                            <div class="header-logo-icon"> <i class="fa fa-phone-square ml-5 mr-3"></i> </div>
-                            <div class="header-logo-text font-weight-bold text-left">
+                            <div class="header-logo-icon" style="margin-left: 100px;"> <i class="fa fa-phone-square ml-5 mr-3"></i> </div>
+                            <div class="header-logo-text font-weight-bold text-center">
                                 <p>(31)3275-4538</p>
                                 <p>(31)3043-0469</p>
                             </div>
@@ -59,7 +62,7 @@ include ('functions/functions.php');
                             <div class="header-logo-icon"> <i class="fa fa-envelope ml-4"></i> </div>
                             <div class="header-logo-text font-weight-bold text-center">
                                 <p>alcirpericia@bol.com.br</p>
-                                <p>contato@alcirpericia.com.br</p>
+                                <p>contato@alcirperito.com.br</p>
                             </div>
                         </div>
                     </div>

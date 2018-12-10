@@ -16,6 +16,7 @@ if(!isset($_SESSION["email"]) || !isset($_SESSION["senha"])){
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Admin panel</title>
+        <link rel="icon" href="../css/imagens/admin.ico">
         <link href="css/jquery-ui.min.css" rel="stylesheet" type="text/css"/>
         <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
         <link href="css/lobipanel.min.css" rel="stylesheet" type="text/css"/>

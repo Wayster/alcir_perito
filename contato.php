@@ -6,6 +6,7 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Contato</title>
+    <link rel="icon" href="css/imagens/home.ico">
 
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
@@ -157,7 +158,7 @@
                         </iframe>
                     </li>
 
-                    <li><span class="fa fa-envelope"></span><b>Email</b>alcirpericia@bol.com.br</li>
+                    <li><span class="fa fa-envelope"></span><b>Email</b>alcirpericia@bol.com.br <br>contato@alcirperito.com.br </li>
                     <li><span class="fa fa-phone"></span><b>Phone / Whatsapp</b>31 3275 4538 <br>
                         31 3043 0469 <br>
                         31 98657 8582 <i class="fab fa-whatsapp"></i> </li>

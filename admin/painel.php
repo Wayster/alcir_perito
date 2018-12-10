@@ -16,6 +16,7 @@ if(!isset($_SESSION["email"]) || !isset($_SESSION["senha"])){
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Admin panel</title>
+    <link rel="icon" href="../css/imagens/admin.ico">
     <link href="css/jquery-ui.min.css" rel="stylesheet" type="text/css"/>
     <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
     <link href="css/lobipanel.min.css" rel="stylesheet" type="text/css"/>
@@ -53,7 +54,7 @@ if(!isset($_SESSION["email"]) || !isset($_SESSION["senha"])){
                 <span class="fa fa-tasks"></span>
             </a>
             <div class="navbar-custom-menu">
-                <h4 class="text-white"><button class="btn btn-success btn-lg">SAIR</button></h4>
+                <a href="logout.php"><h4 class="text-white"><button class="btn btn-success btn-lg"><i class="fas fa-sign-out-alt"></i> Sair</button></h4></a>
             </div>
         </nav>
     </header>
@@ -189,6 +190,10 @@ if(!isset($_SESSION["email"]) || !isset($_SESSION["senha"])){
                 <div class="col-md-12">
 
                     <?php
+
+                    if (isset($_GET[''])){
+                        echo "<div><h1>Seja Bem vindo </h1></div>";
+                    }
                     if (isset($_GET['cabecalhoArPericia'])){
                         include ('cabecalho_ar_pericia.php');
                     };

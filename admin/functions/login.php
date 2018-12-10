@@ -20,12 +20,12 @@ if(isset($_POST['admin_login'])){
         $_SESSION['email']= $_POST['email'];
         $_SESSION['senha']= $_POST['senha'];
 
-        echo "<script>alert('Voce sera redirecionado para a area de administracao')</script>";
+        echo "<script>alert('LOGIN FEITO COM SUCESSO')</script>";
         echo "<script>window.open('../painel.php','_self')</script>";
     }
     else {
 
-        echo "<script>alert('Email or Password is Wrong')</script>";
+        echo "<script>alert('EMAIL OU SENHA ESTAO ERRADOS')</script>";
         echo "<script>window.open('../login.php','_self')</script>";
 
     }

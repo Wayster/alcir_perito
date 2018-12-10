@@ -7,6 +7,8 @@
     <meta name="author" content="">
 
     <title>Login</title>
+    <link rel="icon" href="../css/imagens/admin.ico">
+
 
     <!-- Bootstrap core CSS -->
     <link href="../css/bootstrap.min.css" rel="stylesheet">
