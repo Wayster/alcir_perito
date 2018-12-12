@@ -233,8 +233,8 @@ include ('functions/functions.php');
                         $objetivo = $rs['objetivo'];
 
                         echo "<img style='min-width: 100%; max-height: 400px;' class=\"img-fluid mb-40 imgCursoLimite \" src=\"css/imagens/$img\" alt=\"project image\">";
-                        echo " <h3 class=\"mb-10\">Objetivo do Curso</h3>
-                                    <h5 class=\"mb-40\">$objetivo</h5>";
+                        echo " <h3 class=\"mt-5\">Objetivo do Curso</h3>
+                                    <h5 class=\"mb-4\">$objetivo</h5>";
                     }
 
                 }
@@ -270,9 +270,9 @@ include ('functions/functions.php');
                             while ($rs = mysqli_fetch_array($query_curso)) {
                                 $public = $rs['publico_alvo'];
 
-                                echo " <h4>
+                                echo " <h6>
                                           $public
-                                        </h4>";
+                                        </h6>";
                             }
                         }
 
@@ -289,12 +289,12 @@ include ('functions/functions.php');
                             $query_curso = mysqli_query($con, $get_curso);
                             while ($rs = mysqli_fetch_array($query_curso)) {
                                 $conteudo_programatico = $rs['conteudo_programatico'];
-//                                $conteudo = str_replace("-","<br>",$conteudo_programatico);
+                               $conteudo = nl2br($conteudo_programatico);
 
-                                echo " <h4>
-                                             $conteudo_programatico
+                                echo " <h6>
+                                             $conteudo
                                                                                                                             
-                                        </h4>";
+                                        </h6>";
                             }
                         }
 
@@ -303,12 +303,18 @@ include ('functions/functions.php');
                     </div>
                     <!-- tab 3 -->
                     <div class="tab-pane fade" id="results" role="tabpanel" aria-labelledby="results-tab">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt
-                            ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                            ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-                            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
-                            sint occaecat cupidatat non proident,sunt in culpa qui officia deserunt mollit anim id est
-                            laborum.</p>
+                        <?php
+
+                        if (isset($_GET['curso_id'])) {
+                            $curso_id = $_GET['curso_id'];
+
+                            $get_curso = "select * from cursos where id_cursos='$curso_id'";
+                            $query_curso = mysqli_query($con, $get_curso);
+                            $rs = mysqli_fetch_array($query_curso);
+                            $metodologia = $rs['metodologia'];
+                        }
+                        ?>
+                        <?php echo $metodologia; ?>
                     </div>
                 </div>
             </div>

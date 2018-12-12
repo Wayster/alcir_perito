@@ -89,7 +89,7 @@ if(!isset($_SESSION["email"]) || !isset($_SESSION["senha"])){
                     </li>
                     <li class="treeview">
                         <a href="#">
-                            <i class="fas fa-book"></i><span>PAGINA ARLE</span>
+                            <i class="fas fa-grip-horizontal"></i><span>PAGINA ARLE</span>
                             <span class="pull-right-container">
                                     <i class="fa fa-angle-left pull-right"></i>
                                 </span>
@@ -123,6 +123,32 @@ if(!isset($_SESSION["email"]) || !isset($_SESSION["senha"])){
                         <ul class="treeview-menu">
                             <li><a href="painel.php?add_cursos">Adicionar Cursos</a></li>
                             <li><a href="painel.php?edit_cursos">Editar Cursos</a></li>
+
+                        </ul>
+                    </li>
+                    <li class="treeview">
+                        <a href="#">
+                            <i class="fas fa-book"></i> <span>LIVROS</span>
+                            <span class="pull-right-container">
+                                    <i class="fa fa-angle-left pull-right"></i>
+                                </span>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li><a href="painel.php?add_livros">Adicionar Livros</a></li>
+                            <li><a href="painel.php?edit_livro">Editar Livros</a></li>
+
+                        </ul>
+                    </li>
+                    <li class="treeview">
+                        <a href="#">
+                            <i class="fas fa-book"></i> <span>MATERIAIS DIVERSOS</span>
+                            <span class="pull-right-container">
+                                    <i class="fa fa-angle-left pull-right"></i>
+                                </span>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li><a href="painel.php?add_materiais">Adicionar Materiais</a></li>
+                            <li><a href="painel.php?edit_materiais">Editar Materiais</a></li>
 
                         </ul>
                     </li>

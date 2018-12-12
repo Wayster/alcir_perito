@@ -321,6 +321,10 @@ if (isset($_GET['curso_id'])) {
                         <a class="nav-link btn btn-success " id="solution-tab" data-toggle="tab" href="#solution" role="tab"
                            aria-controls="solution" aria-selected="false">Conteudo do Livro</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link btn btn-success " id="solution-tab" data-toggle="tab" href="#sumario" role="tab"
+                           aria-controls="solution" aria-selected="false">Sumario</a>
+                    </li>
 
                 </ul>
                 <!-- tab content -->
@@ -354,16 +358,11 @@ if (isset($_GET['curso_id'])) {
 
                             $get_curso = "select * from livros where id='$curso_id'";
                             $query_curso = mysqli_query($con, $get_curso);
-                            while ($rs = mysqli_fetch_array($query_curso)) {
+                            $rs = mysqli_fetch_array($query_curso);
                                 $public = $rs['publico'];
-
-                                echo " <h4>
-                                          $public
-                                        </h4>";
-                            }
                         }
-
                         ?>
+                        <h5><?php echo nl2br($conteudo_programatico); ?><h5>
                     </div>
                     <!-- tab 2 -->
                     <div class="tab-pane fade" id="solution" role="tabpanel" aria-labelledby="solution-tab">
@@ -374,17 +373,30 @@ if (isset($_GET['curso_id'])) {
 
                             $get_curso = "select * from livros where id='$curso_id'";
                             $query_curso = mysqli_query($con, $get_curso);
-                            while ($rs = mysqli_fetch_array($query_curso)) {
-                                $conteudo_programatico = $rs['conteudo'];
+                            $rs = mysqli_fetch_array($query_curso);
+                            $conteudo_programatico = $rs['conteudo'];
 
-                                echo " <h4>
-                                             $conteudo_programatico
-                                                                                                                            
-                                        </h4>";
-                            }
                         }
-
                         ?>
+
+                        <h5><?php echo nl2br($conteudo_programatico); ?><h5>
+
+                    </div>
+
+                    <div class="tab-pane fade" id="sumario" role="tabpanel" aria-labelledby="solution-tab">
+                        <?php
+
+                        if (isset($_GET['curso_id'])) {
+                            $curso_id = $_GET['curso_id'];
+
+                            $get_curso = "select * from livros where id='$curso_id'";
+                            $query_curso = mysqli_query($con, $get_curso);
+                            $rs = mysqli_fetch_array($query_curso);
+                                $sumario = $rs['sumario'];
+
+                        }
+                        ?>
+                        <h5><?php echo nl2br($sumario); ?></h5>
 
                     </div>
 
