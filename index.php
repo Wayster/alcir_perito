@@ -25,12 +25,13 @@ include ('functions/functions.php');
 
 </head>
 
-<body style="background-image: url('css/imagens/tela.png'); background-size: cover; background-attachment: fixed;">
-
-<!-- preloader start -->
-<div class="preloader">
-    <img src="css/imagens/pre.gif" alt="preloader">
-</div>
+<?php
+    $sql = "select * from img_fundo_ar";
+    $query = mysqli_query($con,$sql);
+    $rs = mysqli_fetch_array($query);
+    $imgF = $rs['imagem'];
+?>
+<body style="background-image: url('css/imagens/<?php echo $imgF; ?>'); background-size: cover; background-attachment: fixed;">
 
 <div class="header-logo-area bg-success">
     <div class="container-fluid">
@@ -52,8 +53,20 @@ include ('functions/functions.php');
                         <div class="header-logo-address">
                             <div class="header-logo-icon" style="margin-left: 100px;"> <i class="fa fa-phone-square ml-5 mr-3"></i> </div>
                             <div class="header-logo-text font-weight-bold text-center">
-                                <p>(31)3275-4538</p>
-                                <p>(31)3043-0469</p>
+                                <?php
+                                    $sql = "select * from ar_pericia_telefones limit 0,1";
+                                    $query = mysqli_query($con, $sql);
+                                    $rs=mysqli_fetch_array($query);
+                                     $tel1 = $rs['telefones']
+                                ?>
+                                <p><?php echo $tel1;?></p>
+                                <?php
+                                $sql = "select * from ar_pericia_telefones limit 1,2";
+                                $query = mysqli_query($con, $sql);
+                                $rs=mysqli_fetch_array($query);
+                                $tel2 = $rs['telefones']
+                                ?>
+                                <p><?php echo $tel2;?></p>
                             </div>
                         </div>
                     </div>
@@ -61,8 +74,20 @@ include ('functions/functions.php');
                         <div class="header-logo-address">
                             <div class="header-logo-icon"> <i class="fa fa-envelope ml-4"></i> </div>
                             <div class="header-logo-text font-weight-bold text-center">
-                                <p>alcirpericia@bol.com.br</p>
-                                <p>contato@alcirperito.com.br</p>
+                                <?php
+                                $sql = "select * from ar_emails limit 0,1";
+                                $query = mysqli_query($con, $sql);
+                                $rs=mysqli_fetch_array($query);
+                                $email = $rs['email']
+                                ?>
+                                <p><?php echo $email; ?></p>
+                                <?php
+                                $sql = "select * from ar_emails limit 1,2";
+                                $query = mysqli_query($con, $sql);
+                                $rs=mysqli_fetch_array($query);
+                                $email = $rs['email']
+                                ?>
+                                <p><?php echo $email; ?></p>
                             </div>
                         </div>
                     </div>
@@ -175,7 +200,13 @@ include ('functions/functions.php');
                 <div class="row">
                     <div class="col-md-12" data-aos="fade-right" data-aos-duration="2000">
                         <div class="py-2 text-left txt">
-                            <h3>Nossa Empresa</h3>
+                            <?php
+                                $sql = "select * from texto_sobreNos";
+                                $query = mysqli_query($con,$sql);
+                                $rs = mysqli_fetch_array($query);
+                                $title_S = $rs['titulo'];
+                            ?>
+                            <h3><?php echo $title_S; ?></h3>
                             <hr class="align-content-lg-start" style="background-color: darkgreen;">
                         </div>
                     </div>
@@ -195,13 +226,28 @@ include ('functions/functions.php');
             </div>
             </div><!-- ABOUT -->
 
-            <div class="container-fluid my-5">
+            <div class="container-fluid mt-4">
                 <div class="row">
-                    <div class="col-md-12 col-lg-6 services" data-aos="slide-right" data-aos-duration="2000">
-                            <?php getServices(); ?>
+                    <div class="col-md-12 col-lg-12 col-xl-6 services bg-light" data-aos="slide-right" data-aos-duration="2000">
+                            <?php
+                            $sql = "select * from coluna1";
+                            $query = mysqli_query($db, $sql);
+                            $row=mysqli_fetch_array($query);
+                                $titleC = $row['titulo'];
+                                $descricaoC = $row['descricao'];
+
+                            ?>
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <div class="panel-title text-center font-weight-bold"><h3><?php echo $titleC; ?></h3></div>
+                            </div>
+                            <div class="panel-body mx-auto mt-4">
+                                <p class="text-muted"><?php echo nl2br($descricaoC); ?></p>
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="col-md-12 col-lg-6 services" data-aos="flip-left" data-aos-duration="2000">
+                    <div class="col-md-12 col-lg-12 col-xl-6 services bg-light" data-aos="flip-left" data-aos-duration="2000">
                     <?php
 
                         $sql = "select * from slider_titulo_ar";
@@ -296,7 +342,7 @@ include ('functions/functions.php');
 
 
 <!-- Our Featured Wrapper Start -->
-<div class="featured-wrapper py-5">
+<div class="featured-wrapper">
     <div class="container-fluid">
         <div class="section-title">
             <h2 data-aos="fade-down-left" data-aos-duration="2000">Também trabalhamos com cursos e treinamentos</h2>

@@ -13,26 +13,14 @@ function getRealIp(){
 
 function getServices(){
        global $db;
-                            $sql = "select * from services";
+                            $sql = "select * from coluna1";
                             $query = mysqli_query($db, $sql);
                             while ($row=mysqli_fetch_array($query)){
                                 $title = $row['titulo'];
-                                $txt1 = $row['texto1'];
-                                $txt2 = $row['texto2'];
-                                $txt3 = $row['texto3'];
-                                $txt4 = $row['texto4'];
-                                $txt5 = $row['texto5'];
+                                $descricao = $row['descricao'];
 
 
-                                echo "
-                                <h4 class=\"text-center\">$title</h4>
-                        <ul class=\"list-group\">
-                            <li class=\"list-group-item\" style=\"border: 2px solid #242c42\">$txt1</li>
-                            <li class=\"list-group-item\" style=\"border: 2px solid #242c42\">$txt2</li>
-                            <li class=\"list-group-item\" style=\"border: 2px solid #242c42\">$txt3</li>
-                            <li class=\"list-group-item\" style=\"border: 2px solid #242c42\">$txt4</li>
-                            <li class=\"list-group-item\" style=\"border: 2px solid #242c42\">$txt5</li>
-                        </ul>";
+
                             }
 
 }

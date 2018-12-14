@@ -262,11 +262,9 @@
 
 @media (min-width: 992px) and (max-width: 1199.98px) {
 
-
     .navigation .navbar .nav-item .nav-link   {
         font-size: 12px;
     }
-
 
     #responsiveOnly .imgSobre{
         min-height: 300px;
@@ -279,25 +277,23 @@
     }
 
 
-    .services h4{
+    .services h3{
         font-size: 18px;
     }
-    .services li{
-        font-size: 10px;
+
+    .services p{
+        font-size: 16px;
     }
 
-    #carousel{
-        margin-top: 20px;
-    }
 
     #carousel .carousel-inner{
-        min-height: 250px;
-        max-height: 250px;
+        min-height: 350px;
+        max-height: 350px;
     }
 
     #carousel .carousel-inner .carousel-item img{
-        min-height: 250px;
-        max-height: 250px;
+        min-height: 350px;
+        max-height: 350px;
     }
 
     .featured-wrapper h2{
@@ -406,7 +402,7 @@
     }
 
     .services{
-        margin-top: 100px;
+        margin-top: 15px;
     }
 
 

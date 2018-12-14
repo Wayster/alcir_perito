@@ -7,9 +7,19 @@
                     <div class="mb-5 mb-md-0 text-center text-md-left ">
 
                         <!-- logo -->
-                        <img src="css/imagens/ar.png" alt="Logo" class="img-fluid img-thumbnail mb-30">
+                        <?php
+                        $sql = "select * from footer_img1";
+                        $query = mysqli_query($con, $sql);
+                        $rs = mysqli_fetch_array($query);
+                        $imagem_footer = $rs['imagem'];
+                        $texto_footer1 = $rs['text'];
+                        ?>
+                        <img src="css/imagens/<?php echo $imagem_footer; ?>" alt="Logo" class="img-fluid img-thumbnail mb-30">
                         <p class="text-dark mb-30">
-                            Há 17 anos trabalhamos junto aos escritórios de advocacia de Belo Horizonte e Região, e a partir de 2018, também passamos a atuar em Vitoria/ES e Região                        </p>
+                            <?php
+                            echo $texto_footer1;
+                            ?>
+                        </p>
                         <!-- social icon -->
                         <ul class="list-inline">
                             <li class="list-inline-item">
@@ -84,9 +94,17 @@
                     <div class="mb-5 mb-md-0 text-center text-md-left ">
 
                         <!-- logo -->
-                        <img src="css/imagens/logoarle.png" alt="Logo" class="img-fluid img-thumbnail mb-30">
+                        <?php
+                        $sql = "select * from footer_img2";
+                        $query = mysqli_query($con, $sql);
+                        $rs = mysqli_fetch_array($query);
+                        $imagem_footer2 = $rs['imagem'];
+                        $texto_footer2 = $rs['texto'];
+                        ?>
+                        <img src="css/imagens/<?php echo $imagem_footer2; ?>" alt="Logo" class="img-fluid img-thumbnail mb-30">
                         <p class="text-dark mb-30">
-                            Alem de cursos abertos, trabalhamos  com cursos in company e  tambem realizamos treinamentos para pequenos grupos (máximo 4 participantes).                        </p>
+                            <?php echo $texto_footer2; ?>
+                        </p>
                         <!-- social icon -->
 
                     </div>

@@ -86,7 +86,7 @@ if(!isset($_SESSION["email"]) || !isset($_SESSION["senha"])){
 
     }
 
-    ?>
+    ?><!-- update cursos -->
 
 
     <?php
@@ -158,7 +158,7 @@ if(!isset($_SESSION["email"]) || !isset($_SESSION["senha"])){
 
     }
 
-    ?>
+    ?><!-- update book -->
 
     <?php
     if (isset($_POST['atualizar_m']) || isset($_GET['id_m'])){
@@ -182,6 +182,193 @@ if(!isset($_SESSION["email"]) || !isset($_SESSION["senha"])){
 
         }
     }
+    ?><!-- update materials -->
+
+    <?php
+    if (isset($_POST['tel1_save']) || isset($_GET['id_tel'])){
+
+        $id = $_GET['id_tel'];
+        $tel = $_POST['tel1'];
+        $sql = "update ar_pericia_telefones set telefones='$tel' where id=$id";
+        $query = mysqli_query($con, $sql);
+
+        if ($query){
+            echo "<script>alert('TEXTO ALTERADO COM SUCESSO')</script>";
+            echo "<script>window.open('painel.php?cabecalhoArPericia', '_self')</script>";
+        }else {
+            echo "<script>alert('TEXTO ALTERADO COM SUCESSO')</script>";
+            echo "<script>window.open('painel.php?cabecalhoArPericia', '_self')</script>";
+
+        }
+    }
+    ?><!-- update tel 1 -->
+
+    <?php
+    if (isset($_POST['tel2_save']) || isset($_GET['id_tel2'])){
+
+        $id = $_GET['id_tel2'];
+        $tel = $_POST['tel2'];
+        $sql = "update ar_pericia_telefones set telefones='$tel' where id=$id";
+        $query = mysqli_query($con, $sql);
+
+        if ($query){
+            echo "<script>alert('TEXTO ALTERADO COM SUCESSO')</script>";
+            echo "<script>window.open('painel.php?cabecalhoArPericia', '_self')</script>";
+        }else {
+            echo "<script>alert('TEXTO ALTERADO COM SUCESSO')</script>";
+            echo "<script>window.open('painel.php?cabecalhoArPericia', '_self')</script>";
+
+        }
+    }
+    ?><!-- update tel 2 -->
+
+    <?php
+    if (isset($_POST['save_email']) || isset($_GET['email1'])){
+
+        $id = $_GET['email1'];
+        $email = $_POST['email_1'];
+        $sql = "update ar_emails set email='$email' where id=$id";
+        $query = mysqli_query($con, $sql);
+
+        if ($query){
+            echo "<script>alert('TEXTO ALTERADO COM SUCESSO')</script>";
+            echo "<script>window.open('painel.php?cabecalhoArPericia', '_self')</script>";
+        }else {
+            echo "<script>alert('TEXTO ALTERADO COM SUCESSO')</script>";
+            echo "<script>window.open('painel.php?cabecalhoArPericia', '_self')</script>";
+
+        }
+    }
+    ?><!-- update email 1 -->
+
+    <?php
+    if (isset($_POST['save_email2']) || isset($_GET['email2'])){
+
+        $id = $_GET['email2'];
+        $email2 = $_POST['email_2'];
+        $sql = "update ar_emails set email='$email2' where id=$id";
+        $query = mysqli_query($con, $sql);
+
+        if ($query){
+            echo "<script>alert('TEXTO ALTERADO COM SUCESSO')</script>";
+            echo "<script>window.open('painel.php?cabecalhoArPericia', '_self')</script>";
+        }else {
+            echo "<script>alert('TEXTO ALTERADO COM SUCESSO')</script>";
+            echo "<script>window.open('painel.php?cabecalhoArPericia', '_self')</script>";
+
+        }
+    }
+    ?><!-- update email 2 -->
+
+
+    <?php
+        if (isset($_POST['save_img1'])){
+
+            $imagem = $_FILES['img_footer']['name'];
+            $temp_name = $_FILES['img_footer']['tmp_name'];
+            move_uploaded_file($temp_name, "../css/imagens/$imagem");
+
+            $sql = "update footer_img1 set imagem='$imagem'";
+
+            $query = mysqli_query($con, $sql);
+
+            if ($query){
+                echo "<script>alert('ALTERACAO FEITA COM SUCESSO')</script>";
+                echo "<script>window.open('painel.php?rodape', '_self')</script>";
+            }else {
+                echo "<script>alert('OCORREU UM ERRO')</script>";
+                echo "<script>window.open('painel.php?rodape', '_self')</script>";
+//                echo mysqli_error($con);
+
+            }
+        }
+    ?>
+    <?php
+    if (isset($_POST['footer_save'])){
+
+        $texto = $_POST['texto_footer'];
+
+        $sql = "update footer_img1 set imagem='$imagem'";
+
+        $query = mysqli_query($con, $sql);
+
+        if ($query){
+            echo "<script>alert('ALTERACAO FEITA COM SUCESSO')</script>";
+            echo "<script>window.open('painel.php?rodape', '_self')</script>";
+        }else {
+            echo "<script>alert('OCORREU UM ERRO')</script>";
+            echo "<script>window.open('painel.php?rodape', '_self')</script>";
+//                echo mysqli_error($con);
+
+        }
+    }
+    ?>
+
+    <?php
+    if (isset($_POST['save_img2'])){
+
+        $imagem = $_FILES['img_footer2']['name'];
+        $temp_name = $_FILES['img_footer2']['tmp_name'];
+
+        move_uploaded_file($temp_name, "../css/imagens/$imagem");
+
+        $sql = "update footer_img2 set imagem='$imagem'";
+
+        $query = mysqli_query($con, $sql);
+
+        if ($query){
+            echo "<script>alert('ALTERACAO FEITA COM SUCESSO')</script>";
+            echo "<script>window.open('painel.php?rodape', '_self')</script>";
+        }else {
+            echo "<script>alert('OCORREU UM ERRO')</script>";
+//            echo "<script>window.open('painel.php?rodape', '_self')</script>";
+                echo mysqli_error($con);
+
+        }
+    }
+    ?><!-- update img footer side 2 -->
+    <?php
+    if (isset($_POST['footer_save2'])){
+
+       $texto = $_POST['texto_footer2'];
+
+        $sql = "update footer_img2 set texto='$texto'";
+
+        $query = mysqli_query($con, $sql);
+
+        if ($query){
+            echo "<script>alert('ALTERACAO FEITA COM SUCESSO')</script>";
+            echo "<script>window.open('painel.php?rodape', '_self')</script>";
+        }else {
+            echo "<script>alert('OCORREU UM ERRO')</script>";
+//            echo "<script>window.open('painel.php?rodape', '_self')</script>";
+            echo mysqli_error($con);
+
+        }
+    }
+    ?><!-- update text footer side 2 -->
+
+
+
+    <?php
+
+    if (isset($_POST['atualizar_title1'])){
+
+        $title = $_POST['titulo1'];
+        $sql = "update texto_sobreNos set titulo='$title'";
+        $query = mysqli_query($con,$sql);
+
+        if ($query){
+            echo "<script>alert('ALTERACAO FEITA COM SUCESSO')</script>";
+            echo "<script>window.open('painel.php?sobre_ar', '_self')</script>";
+        }else {
+            echo "<script>alert('OCORREU UM ERRO')</script>";
+//            echo "<script>window.open('painel.php?rodape', '_self')</script>";
+            echo mysqli_error($con);
+
+        }
+    }
+
     ?>
 
 <?php } ?>

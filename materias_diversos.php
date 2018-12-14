@@ -28,10 +28,6 @@ include ('functions/functions.php');
 
 <body>
 
-<!-- preloader start -->
-<div class="preloader">
-    <img src="css/imagens/pre.gif" alt="preloader">
-</div>
 
 <div class="container-fluid bg-light">
     <div class="row">
@@ -184,6 +180,88 @@ include ('functions/functions.php');
 
     </div>
 </div>
+
+<div class="container py-5">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="jumbotrom jumbotron-fluid" >
+
+
+                <table class="table table-bordered">
+                    <thead>
+                    <h1 class="text-white"  style="background-color: #242c42">Documentos</h1>
+                    </thead>
+                    <tbody>
+                    <?php
+
+                    $per_page = 10;
+                    if (isset($_GET['page'])){
+                        $page = $_GET['page'];
+                    }else {
+                        $page = 1;
+                    }
+
+                    $start_from = ($page-1) * $per_page;
+                    $sql = "select * from categorias_materials order by 1 limit $start_from, $per_page";
+                    $query = mysqli_query($con, $sql);
+                    while($rs = mysqli_fetch_array($query)){
+                        $title = $rs['title'];
+                        $descricao = $rs['descricao'];
+                        $download =$rs['url'];
+
+
+                        ?>
+
+                        <tr>
+                            <th scope="row"><i class="fas fa-book fa-2x mt-4"></i></th>
+                            <td>
+                                <span><?php echo $title ?></span>
+                                <p><?php echo $descricao ?></p>
+                            </td>
+                            <td>
+                                <a href='<?php echo $download ?>' target='_blank'><button class='btn btn-success btn-md'><span class="mx-4">download</span><i class="fas fa-file-download"></i></button></a>
+                            </td>
+                        </tr>
+
+                    <?php } ?>
+                    </tbody>
+                </table>
+
+                <div class="col-md-12">
+                    <div class="row pb-3">
+                        <nav aria-label="Page navigation example" class="mx-auto">
+                            <ul class="pagination border">
+                                <?php
+                                $query = "select  * from  categorias_materials ";
+                                $result = mysqli_query($con, $query);
+                                $total_record = mysqli_num_rows($result);
+                                $total_pages = ceil($total_record / $per_page);
+
+                                echo  "
+                                    <li class=\"page-item border\"><a class=\"page-link\" href=\"materias_diversos.php?page=1\">".'Primeira Pagina'."</a></li>";
+
+                                for ($i=1; $i <= $total_pages; $i++){
+                                    echo "
+                                            <li class='page-item border'><a class='page-link' href='materias_diversos.php?page=".$i."'>".$i."</a></li>";
+
+                                };
+
+                                echo "
+                                      <li class=\"page-item border\"><a class=\"page-link\" href=\"materias_diversos.php?page=$total_pages\">".'Ultima Pagina'."</a></li>
+                                    ";
+                                ?>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+
+    </div>
+</div>
+
 
 
 <?php include('includes/footer.php') ?>

@@ -54,6 +54,103 @@ include('../functions/functions.php'); ?>
                 </table>
             </div>
         </div>
+
+    </div>
+
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h2 class="pt-5"><i class="fas fa-phone-square"></i> Editar Telefones</h2>
+        </div>
+        <div class="panel-body">
+            <div class="table-responsive">
+                <table class="table table-striped table-md">
+                    <tbody>
+                    <tr>
+                        <td>
+                            <div class="col-md-6">
+                                <?php
+                                $sql = "select * from ar_pericia_telefones limit 0,1";
+                                $query = mysqli_query($con, $sql);
+                                $rs = mysqli_fetch_array($query);
+                                    $id_tel = $rs['id'];
+                                    $tel = $rs['telefones'];
+                                ?>
+                                <form method="post" action="update.php?id_tel=<?php echo $id_tel; ?>">
+                                    <label for="">Telefone</label>
+                                    <h1><input type="text" name="tel1" value="<?php echo $tel; ?>"/></h1>
+                                    <button class="btn btn-info btn-md mx-auto" type="submit" name="tel1_save">atualizar</button>
+                                </form>
+                                    </div>
+                            </div>
+                            <div class="col-md-6">
+                                <?php
+                                $sql = "select * from ar_pericia_telefones limit 1,2";
+                                $query = mysqli_query($con, $sql);
+                                $get = mysqli_fetch_array($query);
+                                $id_telDois = $get['id'];
+                                $tel = $get['telefones'];
+                                ?>
+                                <label for="">Telefone</label>
+                                <form action="update.php?id_tel2=<?php echo $id_telDois;?>" method="post">
+                                    <h1><input type="text" name="tel2" value="<?php echo $tel;?>"></h1>
+                                    <button class="btn btn-info btn-md mx-auto" type="submit" name="tel2_save">atualizar</button>
+                                </form>
+
+
+                            </div>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h2 class="pt-5"><i class="fas fa-phone-square"></i> Editar Emails</h2>
+        </div>
+        <div class="panel-body">
+            <div class="table-responsive">
+                <table class="table table-striped table-md">
+                    <tbody>
+                    <tr>
+                        <td>
+                            <div class="col-md-6">
+                                <?php
+                                $sql = "select * from ar_emails limit 0,1";
+                                $query = mysqli_query($con, $sql);
+                                $rs = mysqli_fetch_array($query);
+                                $id_email = $rs['id'];
+                                $email1 = $rs['email'];
+                                ?>
+                                <form method="post" action="update.php?email1=<?php echo $id_email; ?>">
+                                    <label for="">email 1</label>
+                                    <h3><textarea type="text" name="email_1" cols="22"><?php echo $email1; ?></textarea></h3>
+                                    <button class="btn btn-info btn-md mx-auto" type="submit" name="save_email">atualizar</button>
+                                </form>
+                            </div>
+            </div>
+            <div class="col-md-6">
+                <?php
+                $sql = "select * from ar_emails limit 1,2";
+                $query = mysqli_query($con, $sql);
+                $get = mysqli_fetch_array($query);
+                $id_email2 = $get['id'];
+                $email2 = $get['email'];
+                ?>
+                <label for="">email 2</label>
+                <form action="update.php?email2=<?php echo $id_email2;?>" method="post">
+                    <h3><textarea type="text" name="email_2"><?php echo $email2;?></textarea></h3>
+                    <button class="btn btn-info btn-md mx-auto" type="submit" name="save_email2">atualizar</button>
+                </form>
+
+
+            </div>
+            </td>
+            </tr>
+            </tbody>
+            </table>
+        </div>
     </div>
 
 
@@ -86,3 +183,5 @@ include('../functions/functions.php'); ?>
     }
 
 ?>
+
+

@@ -11,14 +11,67 @@ if(!isset($_SESSION["email"]) || !isset($_SESSION["senha"])){
     <?php include ('../includes/db.php');
     include ('../functions/functions.php');?>
 
+
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <div class="panel-title">
+                <h3>Titulo</h3>
+            </div>
+        </div>
+        <div class="panel-body">
+                <div class="col-lg-12 pt-5" style="margin-top: 20px;"><!-- col-lg-12 Starts -->
+
+                            <?php
+                            $sql = "select * from texto_sobreNos";
+                            $query = mysqli_query($con, $sql);
+                            $rs = mysqli_fetch_array($query);
+                            $id = $rs['id'];
+                            $titulo = $rs['titulo'];
+                            ?>
+                            <form class="form-inline" action="update.php" method="post" enctype="multipart/form-data" ><!-- form-horizontal Starts -->
+
+                                <div class="form-group" ><!-- form-group Starts -->
+
+                                    <label class="col-md-3 control-label">Titulo</label>
+
+                                    <div class="col-md-6">
+
+                                        <textarea name="titulo1" class="form-control-plaintext" rows="5" cols="50"><?php echo $titulo; ?></textarea>
+
+                                    </div>
+
+                                </div><!-- form-group Ends -->
+
+                                <div class="form-group" ><!-- form-group Starts -->
+
+                                    <label class="col-md-3 control-label"></label>
+
+                                    <div class="col-md-3">
+
+                                        <input type="submit" name="atualizar_title1" value="atualizar" class=" btn btn-success form-control" >
+
+                                    </div>
+
+                                </div><!-- form-group Ends -->
+
+
+                            </form><!-- form-horizontal Ends -->
+
+                        </div><!-- panel-body Ends -->
+
+
+                    </div><!-- panel panel-default Ends -->
+
+                </div><!-- col-lg-12 Ends -->
+
     <div class="panel panel-default">
         <div class="panel-heading" ><!-- panel-heading Starts -->
 
-            <h3 class="card-title" >
+            <div class="panel-title">
 
-                <i class="far fa-newspaper"></i> Sobre Nos Imagem
+                <h3><i class="far fa-newspaper"></i> Imagem</h3>
 
-            </h3>
+            </div>
 
         </div><!-- panel-heading Ends -->
         <div class="panel-body">
@@ -91,7 +144,7 @@ if(!isset($_SESSION["email"]) || !isset($_SESSION["senha"])){
 
                 <h3 class="card-title" >
 
-                    <i class="fas fa-edit"></i> Alterar texto sobre nos!
+                    <i class="fas fa-edit"></i> Alterar texto
 
                 </h3>
 
@@ -183,3 +236,4 @@ if(isset($_POST['save_img'])){
 
 
 ?><!-- insert imagem sobre -->
+

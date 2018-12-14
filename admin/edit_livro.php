@@ -40,9 +40,6 @@ if(!isset($_SESSION["email"]) || !isset($_SESSION["senha"])){
                                 <th style="font-size: 12px;">Imagem</th>
                                 <th>Deletar</th>
                                 <th>Editar</th>
-
-
-
                             </tr>
 
                             </thead>

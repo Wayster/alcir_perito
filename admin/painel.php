@@ -90,7 +90,7 @@ if(!isset($_SESSION["email"]) || !isset($_SESSION["senha"])){
                         <li><a href="?imgTPrincipal">Imagem e texto Principal</a></li>
                         <li><a href="?sobre_ar">Sobre Nos</a></li>
                         <li><a href="?sliders_ar">Sliders e Titulo</a></li>
-
+                        <li><a href="?coluna1">Servicos</a></li>
                     </ul>
                 </li>
                 <li class="treeview">
@@ -160,12 +160,23 @@ if(!isset($_SESSION["email"]) || !isset($_SESSION["senha"])){
                     </ul>
                 </li>
 
+
+                <li class="treeview">
+                    <a href="?rodape">
+                        <i class="fas fa-solar-panel"></i><span>RODAPE</span>
+                        <span class="pull-right-container">
+                          <i class="fa fa-angle-left pull-right"></i>
+                        </span>
+                    </a>
+                </li>
+
+
                 <li class="treeview">
                     <a href="https://webmail.hostinger.com.br/auth" target="_blank">
                         <i class="fas fa-book"></i> <span>EMAIL</span>
                         <span class="pull-right-container">
-                                    <i class="fas fa-globe"></i>
-                                </span>
+                        <i class="fas fa-globe"></i>
+                        </span>
                     </a>
                 </li>
             </ul>
@@ -191,9 +202,6 @@ if(!isset($_SESSION["email"]) || !isset($_SESSION["senha"])){
 
                     <?php
 
-                    if (isset($_GET[''])){
-                        echo "<div><h1>Seja Bem vindo </h1></div>";
-                    }
                     if (isset($_GET['cabecalhoArPericia'])){
                         include ('cabecalho_ar_pericia.php');
                     };
@@ -254,8 +262,12 @@ if(!isset($_SESSION["email"]) || !isset($_SESSION["senha"])){
                         include "edit_materiais.php";
                     };
 
-                    if (isset($_GET['mail'])){
-                        include "mail.php";
+                    if (isset($_GET['coluna1'])){
+                      include "services.php";
+                    };
+
+                    if (isset($_GET['rodape'])){
+                        include ("rodape.php");
                     };
 
                     ?>
