@@ -1,9 +1,14 @@
 @media (min-width: 2000px) {
-    .header-logo-address .header-logo-text{
-        font-size: 2rem;
+    .header-logo-address .header-logo-text p {
+        font-size: 3rem;
         text-align: center;
         margin-top: 10%;
         font-weight: bold;
+    }
+
+    .header-logo-icon{
+        display: block;
+        visibility: hidden;
     }
 
     .navigation .navbar-default  ul {
@@ -176,6 +181,15 @@
 }
 
 @media (min-width: 1200px) and (max-width: 1900px) {
+
+
+    .header_img img{
+        min-width: 400px;
+        max-width: 400px;
+    }
+
+
+
 
     #carousel{
         margin-top: 10px;
@@ -411,10 +425,16 @@
 
 @media (min-width: 768px) and (max-width: 991.98px) {
 
+
     .header-logo-address .header-logo-text{
         font-size: 1rem;
-        text-align: center;
         font-weight: bold;
+    }
+
+
+    .header_img img{
+        min-width: 300px;
+        max-width: 300px;
     }
 
     .navigation .navbar-default  ul {
@@ -548,12 +568,15 @@
 
 @media (max-width: 575.98px) {
 
+    .header_img img{
+        width: 100%;
+    }
     .breadcrumb-wrapper {
         min-height: 900px;
     }
 
     .breadcrumb-wrapper .container h1{
-        font-size: 22px;
+        font-size: 20px;
         padding-bottom: 20px;
     }
 
@@ -593,8 +616,13 @@
     }
 
     .table button span {
-        border: 1px solid red;
         display: none;
+    }
+    .featured-box p{
+        min-height: 100px;
+        max-height: 100px;
+        overflow: auto;
+
     }
 
 }

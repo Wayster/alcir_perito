@@ -37,45 +37,31 @@ echo "
 ?>
 
 
-<!-- preloader start -->
-<div class="preloader">
-    <img src="css/imagens/pre.gif" alt="preloader">
-</div>
-
-<div class="header-logo-area bg-success">
+<div class="bg-success">
     <div class="container-fluid">
         <div class="row">
-            <div class="col-xl-6 col-lg-5 col-md-12" style="max-height: 200px;">
-                <div class="">
+            <div class="col-xl-6 col-lg-5 py-3" style="max-height: 200px;">
+                <div class="header_img">
                     <?php
                     $sql = "select * from ct_header";
                     $query = mysqli_query($con, $sql);
                     $rs = mysqli_fetch_array($query);
                     $imagem = $rs['imagem'];
                     ?>
-                    <img src="css/imagens/<?php echo $imagem; ?>" class="img-fluid img-thumbnail" style="min-width: 400px; max-width: 400px; min-height: 100px; max-height: 100px;">
+                    <img src="css/imagens/<?php echo $imagem; ?>" class="img-fluid img-thumbnail">
                 </div>
             </div>
-            <div class="col-xl-6 col-lg-7 col-md-12 d-none d-lg-block d-md-block"style="max-height: 200px;">
+            <div class="col-xl-6 col-lg-7 py-5">
                 <div class="row">
-                    <div class="col-md-4 col-sm-4 col-lg-6 col-xl-6">
-                        <div class="header-logo-address">
-                            <div class="header-logo-icon"> <i class="fa fa-phone-square" style="margin-left: 80px;"></i> </div>
-                            <div class="header-logo-text font-weight-bold text-center">
-                                <p>(31)3275-4538</p>
-                                <p>(31)3043-0469</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 col-sm-4 col-lg-6 col-xl-6">
-                        <div class="header-logo-address">
-                            <div class="header-logo-icon"> <i class="fa fa-envelope ml-4"></i> </div>
-                            <div class="header-logo-text font-weight-bold text-center">
-                                <p>alcirpericia@bol.com.br</p>
-                                <p>contato@alcirperito.com.br</p>
-                            </div>
-                        </div>
-                    </div>
+                    <?php
+                    $sql = "select * from ct_header";
+                    $query = mysqli_query($con, $sql);
+                    $rs = mysqli_fetch_array($query);
+                    $texto = $rs['texto'];
+                    ?>
+                    <p class="text-center font-weight-bold">
+                       <?php echo $texto; ?>
+                    </p>
                 </div>
             </div>
         </div>
@@ -154,22 +140,32 @@ echo "
 
 <div class="breadcrumb-wrapper">
     <div class="container">
-        <h1 data-aos="fade-right" data-aos-duration="2000">ARLE Cursos e Treinamentos</h1>
+        <?php
+        $sql = "select * from ct_about_us_txt";
+        $query = mysqli_query($con, $sql);
+        $rs = mysqli_fetch_array($query);
+        $title = $rs['titulo'];
+        $desc = $rs['descricao'];
+        $sub = $rs['sub_title'];
+        ?>
+        <h1 data-aos="fade-right" data-aos-duration="2000"><?php echo $title; ?></h1>
         <div class="col-md-12" data-aos="slide-left" data-aos-duration="2000">
             <div class="testimonial-block sobre">
                 <div class="inner-box bg-light">
-                    <div class="image"> <img src="css/imagens/alcir.jpeg" class="img-fluid" /> </div>
+                    <div class="image">
+                        <?php
+                                $sql  = "select * from ct_img_about";
+                                $query = mysqli_query($con, $sql);
+                                $row = mysqli_fetch_array($query);
+                                $imagemCT = $row['imagem'];
+                        ?>
+                        <img src="css/imagens/<?php echo $imagemCT; ?>" class="img-fluid">
+                    </div>
                     <div class="content">
                         <div class="author-info">
-                            <?php
-                                $sql = "select * from ct_about_us_txt";
-                                $query = mysqli_query($con, $sql);
-                                $rs = mysqli_fetch_array($query);
-                                $title = $rs['titulo'];
-                                $title_two = $rs['titulo_two'];
-                                $desc = $rs['descricao'];
-                            ?>
-                            <p class="tst text-dark"><?php echo $title; ?></p> <p class="tst text-success"><?php echo $title_two; ?></p>
+                            <h3 class="tst text-success">
+                                <?php echo $sub; ?>
+                            </h3>
                         </div>
                         <div class="text-dark texto_breadCrump">
                             <p>

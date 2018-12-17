@@ -349,26 +349,90 @@ if(!isset($_SESSION["email"]) || !isset($_SESSION["senha"])){
     ?><!-- update text footer side 2 -->
 
 
-
     <?php
+    if (isset($_POST['save_title_ct'])){
 
-    if (isset($_POST['atualizar_title1'])){
+        $title = $_POST['ct_title'];
 
-        $title = $_POST['titulo1'];
-        $sql = "update texto_sobreNos set titulo='$title'";
+        $sql = "update ct_about_us_txt set titulo= '$title'";
+
         $query = mysqli_query($con,$sql);
 
         if ($query){
             echo "<script>alert('ALTERACAO FEITA COM SUCESSO')</script>";
-            echo "<script>window.open('painel.php?sobre_ar', '_self')</script>";
+            echo "<script>window.open('painel.php?cursosetreinamentos_About', '_self')</script>";
         }else {
             echo "<script>alert('OCORREU UM ERRO')</script>";
-//            echo "<script>window.open('painel.php?rodape', '_self')</script>";
+           echo "<script>window.open('painel.php?cursosetreinamentos_About', '_self')</script>";
+
+        }
+    }
+    ?>
+
+    <?php
+    if (isset($_POST['save_sub_title_ct'])){
+
+        $sub_title = $_POST['sub_ct_title'];
+
+        $sql = "update ct_about_us_txt set sub_title= '$sub_title'";
+
+        $query = mysqli_query($con,$sql);
+
+        if ($query){
+            echo "<script>alert('ALTERACAO FEITA COM SUCESSO')</script>";
+            echo "<script>window.open('painel.php?cursosetreinamentos_About', '_self')</script>";
+        }else {
+            echo "<script>alert('OCORREU UM ERRO')</script>";
+            echo "<script>window.open('painel.php?cursosetreinamentos_About', '_self')</script>";
+
+        }
+    }
+    ?>
+
+
+    <?php
+    if (isset($_POST['save_descr_ct'])){
+
+        $descricao = $_POST['descr_ct'];
+
+        $sql = "update ct_about_us_txt set descricao= '$descricao'";
+
+        $query = mysqli_query($con,$sql);
+
+        if ($query){
+            echo "<script>alert('ALTERACAO FEITA COM SUCESSO')</script>";
+            echo "<script>window.open('painel.php?cursosetreinamentos_About', '_self')</script>";
+        }else {
+            echo "<script>alert('OCORREU UM ERRO')</script>";
+            echo "<script>window.open('painel.php?cursosetreinamentos_About', '_self')</script>";
+
+        }
+    }
+    ?>
+
+
+    <?php
+    if (isset($_POST['saveImg_about'])){
+
+
+        $img = $_FILES['imageCtHeader']['name'];
+        $tmp_img = $_FILES['imageCtHeader']['tmp_name'];
+
+        move_uploaded_file($tmp_img, "../css/imagens/$img");
+
+        $update = "update ct_img_about set imagem= '$img'";
+
+        $query = mysqli_query($con, $update);
+
+        if ($query){
+            echo "<script>alert('IMAGEM INSERIDA COM SUCESSO')</script>";
+            echo "<script>window.open('painel.php?cursosetreinamentos_About', '_self')</script>";
+        }else {
+            echo "<script>alert('OCORREU UM ERRO')</script>";
+//           echo "<script>window.open('painel.php?cursosetreinamentos_About', '_self')</script>";
             echo mysqli_error($con);
 
         }
     }
-
     ?>
-
 <?php } ?>

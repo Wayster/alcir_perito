@@ -63,14 +63,14 @@ if (isset($_GET['curso_id'])) {
     <div class="container-fluid">
         <div class="row">
             <div class="col-xl-6 col-lg-5 col-md-12" style="max-height: 200px;">
-                <div class="">
+                <div class="header_img">
                     <?php
                     $sql = "select * from ct_header";
                     $query = mysqli_query($con, $sql);
                     $rs = mysqli_fetch_array($query);
                     $imagem = $rs['imagem'];
                     ?>
-                    <img src="css/imagens/<?php echo $imagem; ?>" class="img-fluid img-thumbnail" style="min-width: 400px; max-width: 400px; min-height: 100px; max-height: 100px;">
+                    <img src="css/imagens/<?php echo $imagem; ?>" class="img-fluid img-thumbnail">
                 </div>
             </div>
             <div class="col-xl-6 col-lg-7 col-md-12 d-none d-lg-block d-md-block"style="max-height: 200px;">

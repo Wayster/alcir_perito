@@ -36,22 +36,22 @@ include ('functions/functions.php');
 <div class="header-logo-area bg-success">
     <div class="container-fluid">
         <div class="row">
-            <div class="col-xl-6 col-lg-5 col-md-12" style="max-height: 200px;">
-                <div class="">
+            <div class="col-xl-6 col-lg-5 col-md-4">
+                <div class="header_img">
                     <?php
                     $sql = "select * from header_logo_ar";
                     $query = mysqli_query($con, $sql);
                     $rs = mysqli_fetch_array($query);
                     $imagem = $rs['imagem'];
                     ?>
-                    <img src="css/imagens/<?php echo $imagem; ?>" class="img-fluid img-thumbnail" style="min-width: 400px; max-width: 400px; min-height: 100px; max-height: 100px;">
+                    <img src="css/imagens/<?php echo $imagem; ?>" class="img-fluid img-thumbnail">
                 </div>
             </div>
-            <div class="col-xl-6 col-lg-7 col-md-12 d-none d-lg-block d-md-block"style="max-height: 200px;">
+            <div class="col-xl-6 col-lg-7 col-md-8">
                 <div class="row">
-                    <div class="col-md-4 col-sm-4 col-lg-6 col-xl-6">
+                    <div class="col-md-6 col-sm-4 col-lg-6 col-xl-6 d-none d-sm-block">
                         <div class="header-logo-address">
-                            <div class="header-logo-icon" style="margin-left: 100px;"> <i class="fa fa-phone-square ml-5 mr-3"></i> </div>
+                            <div class="header-logo-icon iconAdjust"><i class="fa fa-phone-square"></i> </div>
                             <div class="header-logo-text font-weight-bold text-center">
                                 <?php
                                     $sql = "select * from ar_pericia_telefones limit 0,1";
@@ -70,7 +70,7 @@ include ('functions/functions.php');
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-4 col-sm-4 col-lg-6 col-xl-6">
+                    <div class="col-md-6 col-sm-4 col-lg-6 col-xl-6 d-none d-sm-block">
                         <div class="header-logo-address">
                             <div class="header-logo-icon"> <i class="fa fa-envelope ml-4"></i> </div>
                             <div class="header-logo-text font-weight-bold text-center">

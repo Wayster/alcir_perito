@@ -39,8 +39,9 @@ position: relative;
     text-align: center;
     line-height: 35px;
     border-radius: 3px;
-    margin-left: 0px;
+    margin-right: -40px;
 }
+
 .header-logo-text p {
     margin: 0;
     overflow: hidden;
@@ -1740,129 +1741,8 @@ footer .footer-text .footer-logo span {
 32. Responsive Styles
 ================================================
 */
-@media (min-width: 1200px) and (max-width: 1399px) {
-}
 
-@media (min-width: 992px) and (max-width: 1199px) {
-    /** Banner Wrapper **/
-    .sb-nivo-slider-wrapper .nivo-directionNav {
-        display: none;
-    }
-    /** Counter Wrapper **/
-    .counter-icon:before {
-        display: none;
-    }
-    .count-description p {
-        font-size: 15px;
-    }
-    .counter-icon .icon {
-        height: 45px;
-        line-height: 45px;
-        width: 45px;
-    }
-    .counter-icon {
-        height: 60px;
-        width: 60px;
-    }
-    /** coming-soon Wrapper **/
-    .coming-soon .coming-soon-inner {
-        width: 50%;
-    }
-}
 
-@media (min-width: 768px) and (max-width: 991px) {
-    /** Header Logo Area **/
-    .header-logo-area {
-        padding: 24px 0 30px;
-    }
-    .logo {
-        margin-bottom: 25px;
-        text-align: center;
-    }
-    .header-logo-address::before {
-        display: none;
-    }
-    /** Header Menu Area **/
-    .main-menu-area ul li > a {
-        padding: 0 8px;
-        height: 60px;
-        line-height: 55px;
-    }
-    .main-menu-area ul li ul.mega-menu > li h2 {
-        font-size: 20px;
-    }
-    /** Slider Area **/
-    .sb-slider-title {
-        color: #ffffff;
-        font-size: 15px;
-        font-weight: 600;
-        margin-bottom: 23px;
-        text-transform: none;
-        letter-spacing: 1px;
-    }
-    .sb-slider-sub-title {
-        font-size: 30px;
-        margin-bottom: 0;
-    }
-    .sb-slider-descript {
-        display: none;
-    }
-    .sb-nivo-slider-wrapper .nivo-directionNav {
-        display: none;
-    }
-    .sb-button-button-area a {
-        margin-top: 30px;
-    }
-    /** Counter Wrapper **/
-    .counter-wrapper {
-        padding-bottom: 0;
-    }
-    .counter {
-        padding-bottom: 120px;
-    }
-    .count-description {
-        width: calc(100% - 150px);
-    }
-    /** Blog Wrapper **/
-    .blog_btm_cntnt {
-        width: 94%;
-        padding: 30px;
-    }
-    /** Our CTA Wrapper **/
-    .our-cta-wrapper h2 {
-        font-size: 1.5rem;
-    }
-    /** Featured Wrapper **/
-    .featured-wrapper .no-padding {
-        padding: 0 15px;
-    }
-    .featured-box {
-        width: 100%;
-    }
-    /** About Us Wrapper **/
-    .about-sec {
-        margin: 20px 0 40px;
-    }
-    /** FAQ Wrapper **/
-    .faq-testimoni {
-        margin:50px 0 0;
-    }
-    /** Blog Wrapper **/
-    .blog_box_wrapper.blog_box_padding {
-        margin:0 0 40px;
-    }
-    .btc_blog_cate_cont_wrapper {
-        padding: 20px;
-    }
-    /** coming-soon Wrapper **/
-    .coming-soon .coming-soon-inner {
-        width: 70%;
-    }
-    /** Login Wrapper **/
-    .login-box {
-        width: 55%;
-    }
-}
 
 @media (max-width: 767px) {
     /** Top Wrapper **/

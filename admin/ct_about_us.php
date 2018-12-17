@@ -12,97 +12,215 @@ if(!isset($_SESSION["email"]) || !isset($_SESSION["senha"])){
     include ('../functions/functions.php');?>
 
 
-    <div class="col-lg-12 pt-5" style="margin-top: 20px;"><!-- col-lg-12 Starts -->
+    <div class="row" ><!-- 2 row Starts -->
 
-        <div class="panel panel-default" ><!-- panel panel-default Starts -->
+        <div class="col-lg-12" ><!-- col-lg-12 Starts -->
 
-            <div class="panel-heading" ><!-- panel-heading Starts -->
+            <div class="panel panel-default" ><!-- panel panel-default Starts -->
 
-                <h3 class="card-title" >
+                <div class="panel-heading" ><!-- panel-heading Starts -->
 
-                    <i class="fas fa-edit"></i> Alterar texto sobre nos!
+                    <h3 class="panel-title" ><!-- panel-title Starts -->
 
-                </h3>
+                        <i class="fas fa-chalkboard-teacher"></i> Editar informacoes
 
-            </div><!-- panel-heading Ends -->
-
-            <div class="panel-body" ><!-- panel-body Starts -->
-
-                <?php
-                $sql = "select * from ct_about_us_txt";
-                $query = mysqli_query($con, $sql);
-                $rs = mysqli_fetch_array($query);
-                $id = $rs['id'];
-                $title = $rs['titulo'];
-                $title_two = $rs['titulo_two'];
-                $descr = $rs['descricao'];
+                    </h3><!-- panel-title Ends -->
 
 
-                ?>
-                <form class="form-horizontal" action="altera_titulo_sliders.php?id_sobre_texto_ct=<?php echo $id; ?>" method="post" enctype="multipart/form-data" ><!-- form-horizontal Starts -->
+                </div><!-- panel-heading Ends -->
 
-                    <div class="form-group" ><!-- form-group Starts -->
+                <div class="panel-body" ><!-- panel-body Starts -->
 
-                        <label class="col-md-3 control-label">Titulo 1</label>
+                    <div class="table-responsive" ><!-- table-responsive Starts -->
 
-                        <div class="col-md-6">
+                        <table class="table table-bordered table-hover table-striped" ><!-- table table-bordered table-hover table-striped Starts -->
 
-                            <input name="titutlo_one" class="form-control-plaintext" rows="5" cols="50" value="<?php echo $title; ?>"/>
+                            <thead>
 
-                        </div>
+                            <tr>
+                                <th style="font-size: 12px;">Titulo</th>
+                                <th>Editar</th>
+                            </tr>
 
-                    </div><!-- form-group Ends -->
+                            </thead>
 
-                    <div class="form-group" ><!-- form-group Starts -->
+                            <tbody>
 
-                        <label class="col-md-3 control-label">Titulo 2</label>
+                            <?php
 
-                        <div class="col-md-6">
+                            $get_pro = "select * from ct_about_us_txt";
 
-                            <input name="titutlo_two_ct" class="form-control-plaintext" rows="5" cols="50" value="<?php echo $title_two; ?>"/>
+                            $run_pro = mysqli_query($con,$get_pro);
 
-                        </div>
+                            while ($row_pro=mysqli_fetch_array($run_pro)){
+                            $title = $row_pro['titulo'];
+                            ?>
 
-                    </div><!-- form-group Ends -->
+                            <tr>
+                                <form action="update.php" method="post">
+                                    <td><textarea cols="30" name="ct_title"><?php echo $title; ?></textarea></td>
 
-
-                    <div class="form-group" ><!-- form-group Starts -->
-
-                        <label class="col-md-3 control-label">Descricao</label>
-
-                        <div class="col-md-6">
-
-                            <textarea name="texto_sobre_ct" class="form-control-plaintext" rows="5" cols="50"><?php echo $descr; ?></textarea>
-
-                        </div>
-
-                    </div><!-- form-group Ends -->
-
-                    <div class="form-group" ><!-- form-group Starts -->
-
-                        <label class="col-md-3 control-label"></label>
-
-                        <div class="col-md-6">
-
-                            <input type="submit" name="atualizar_ct" value="atualizar" class=" btn btn-primary form-control" >
-
-                        </div>
-
-                    </div><!-- form-group Ends -->
+                                    <td>
+                                    <button class="btn btn-info btn-sm" type="submit" name="save_title_ct"><i class="fas fa-edit"></i> atualizar</button>
+                                    </td>
+                                </form>
+                            </tr>
 
 
-                </form><!-- form-horizontal Ends -->
+                            </tbody>
 
-            </div><!-- panel-body Ends -->
+                            <?php } ?>
+
+                        </table>
+
+                        <table class="table table-bordered table-hover table-striped" ><!-- table table-bordered table-hover table-striped Starts -->
+
+                            <thead>
+
+                            <tr>
+                                <th style="font-size: 12px;">Sub Titulo</th>
+                                <th>Editar</th>
+                            </tr>
+
+                            </thead>
+
+                            <tbody>
+
+                            <?php
+
+                            $get_pro = "select * from ct_about_us_txt";
+
+                            $run_pro = mysqli_query($con,$get_pro);
+
+                            while ($row_pro=mysqli_fetch_array($run_pro)){
 
 
-        </div><!-- panel panel-default Ends -->
+                            $desc = $row_pro['sub_title'];
 
-    </div><!-- col-lg-12 Ends -->
 
+
+                            ?>
+
+                            <tr>
+                                <form action="update.php" method="post">
+                                    <td><textarea cols="30" name="sub_ct_title"><?php echo $desc; ?></textarea></td>
+                                    <td>
+                                         <button class="btn btn-info btn-sm" type="submit" name="save_sub_title_ct"><i class="fas fa-edit"></i> atualizar</button>
+                                    </td>
+                                </form>
+                            </tr>
+
+
+                            </tbody>
+
+                            <?php } ?>
+
+                        </table><!-- table table-bordered table-hover table-striped Ends -->
+
+                        <table class="table table-bordered table-hover table-striped" ><!-- table table-bordered table-hover table-striped Starts -->
+
+                            <thead>
+
+                            <tr>
+                                <th style="font-size: 12px;">Texto</th>
+                                <th>Editar</th>
+                            </tr>
+
+                            </thead>
+
+                            <tbody>
+
+                            <?php
+
+                            $get_pro = "select * from ct_about_us_txt";
+
+                            $run_pro = mysqli_query($con,$get_pro);
+
+                            while ($row_pro=mysqli_fetch_array($run_pro)){
+                            $descr = $row_pro['descricao'];
+
+                            ?>
+
+                            <tr>
+                                <form action="update.php" method="post">
+                                    <td><textarea cols="30" name="descr_ct"><?php echo $descr; ?></textarea></td>
+
+                                    <td>
+                                        <button class="btn btn-info btn-sm" type="submit" name="save_descr_ct"><i class="fas fa-edit"></i> atualizar</button>
+                                    </td>
+                                </form>
+                            </tr>
+
+
+                            </tbody>
+
+                            <?php } ?>
+
+                        </table>
+
+                        <table class="table table-bordered table-hover table-striped" ><!-- table table-bordered table-hover table-striped Starts -->
+
+                            <thead>
+
+                            <tr>
+                                <th style="font-size: 12px;">Imagem</th>
+                                <th>atualizar imagem</th>
+                            </tr>
+
+                            </thead>
+
+                            <tbody>
+
+                            <?php
+
+                            $get_pro = "select * from ct_img_about";
+
+                            $run_pro = mysqli_query($con,$get_pro);
+
+                            $row_pro=mysqli_fetch_array($run_pro);
+
+                                $img_id = $row_pro['id'];
+                                $pro_image_ct = $row_pro['imagem'];
+                            ?>
+
+                                <td>
+                                    <img src="../css/imagens/<?php echo $pro_image_ct; ?>" class="img-fluid img-circle" style="width: 120px;"/>
+                                </td>
+                            <form action="update.php" method="post" enctype="multipart/form-data">
+                                <td>
+                                    <div class="form-group" ><!-- form-group Starts -->
+                                        <div class="col-md-6" >
+                                            <input type="file" name="imageCtHeader" class="form-control" required/>
+                                        </div>
+
+                                        <button class="btn btn-success btn-md" type="submit" name="saveImg_about">salvar</button>
+
+                                    </div><!-- form-group Ends -->
+                                </td>
+                            </form>
+
+                            </tr>
+
+
+                            </tbody>
+
+
+                        </table>
+
+
+                    </div><!-- table-responsive Ends -->
+
+                </div><!-- panel-body Ends -->
+
+            </div><!-- panel panel-default Ends -->
+
+        </div><!-- col-lg-12 Ends -->
+
+    </div><!-- 2 row Ends -->
 
 
 <?php } ?>
+
 
 
 

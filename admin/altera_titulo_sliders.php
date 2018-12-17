@@ -81,4 +81,28 @@ if(isset($_POST['update_title']) || isset($_GET['title_id'])){
     ?>
 
 
+    <?php
+    if (isset($_POST['atualizar_ct_txt']) || isset($_GET['text_header'])){
+
+        $id_sobre = $_GET['text_header'];
+
+        $des = $_POST['texto_header'];
+
+
+        $sql = "update ct_header set texto='$des' where id='$id_sobre'";
+        $query = mysqli_query($con, $sql);
+
+        if ($query){
+            echo "<script>alert('TEXTO ALTERADO COM SUCESSO')</script>";
+            echo "<script>window.open('painel.php?cursosetreinamentos_header', '_self')</script>";
+        }else {
+            echo "<script>alert('ERRO AO ALTERAR TEXTO')</script>";
+            echo "<script>window.open('painel.php?cursosetreinamentos_header', '_self')</script>";
+
+        }
+    }
+    ?>
+
+
+
 <?php } ?>
