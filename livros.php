@@ -23,43 +23,61 @@ include ('functions/functions.php');
 </head>
 <body>
 
-<!-- preloader start -->
-<div class="preloader">
-    <img src="css/imagens/pre.gif" alt="preloader">
-</div>
-
-
 <div class="header-logo-area bg-success">
     <div class="container-fluid">
         <div class="row">
-            <div class="col-xl-6 col-lg-5 col-md-12" style="max-height: 200px;">
-                <div class="">
+            <div class="col-xl-6 col-lg-5 col-md-4">
+                <div class="header_img">
                     <?php
-                    $sql = "select * from ct_header";
+                    $sql = "select * from header_logo_ar";
                     $query = mysqli_query($con, $sql);
                     $rs = mysqli_fetch_array($query);
                     $imagem = $rs['imagem'];
                     ?>
-                    <img src="css/imagens/<?php echo $imagem; ?>" class="img-fluid img-thumbnail" style="min-width: 400px; max-width: 400px; min-height: 100px; max-height: 100px;">
+                    <img src="css/imagens/<?php echo $imagem; ?>" class="img-fluid img-thumbnail">
                 </div>
             </div>
-            <div class="col-xl-6 col-lg-7 col-md-12 d-none d-lg-block d-md-block"style="max-height: 200px;">
+            <div class="col-xl-6 col-lg-7 col-md-8">
                 <div class="row">
-                    <div class="col-md-4 col-sm-4 col-lg-6 col-xl-6">
+                    <div class="col-md-6 col-sm-4 col-lg-6 col-xl-6 d-none d-sm-block">
                         <div class="header-logo-address">
-                            <div class="header-logo-icon"> <i class="fa fa-phone-square" style="margin-left: 140px;"></i> </div>
+                            <div class="header-logo-icon iconAdjust1"><i class="fa fa-phone-square"></i> </div>
                             <div class="header-logo-text font-weight-bold text-center">
-                                <p>(31)3275-4538</p>
-                                <p>(31)3043-0469</p>
+                                <?php
+                                $sql = "select * from ar_pericia_telefones limit 0,1";
+                                $query = mysqli_query($con, $sql);
+                                $rs=mysqli_fetch_array($query);
+                                $tel1 = $rs['telefones']
+                                ?>
+                                <p><?php echo $tel1;?></p>
+                                <?php
+                                $sql = "select * from ar_pericia_telefones limit 1,2";
+                                $query = mysqli_query($con, $sql);
+                                $rs=mysqli_fetch_array($query);
+                                $tel2 = $rs['telefones']
+                                ?>
+                                <p><?php echo $tel2;?></p>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-4 col-sm-4 col-lg-6 col-xl-6">
+                    <div class="col-md-6 col-sm-4 col-lg-6 col-xl-6 d-none d-sm-block">
                         <div class="header-logo-address">
                             <div class="header-logo-icon"> <i class="fa fa-envelope ml-4"></i> </div>
-                            <div class="header-logo-text font-weight-bold text-center">
-                                <p>alcirpericia@bol.com.br</p>
-                                <p>contato@alcirperito.com.br</p>
+                            <div class="header-logo-text iconAdjust2 font-weight-bold text-center">
+                                <?php
+                                $sql = "select * from ar_emails limit 0,1";
+                                $query = mysqli_query($con, $sql);
+                                $rs=mysqli_fetch_array($query);
+                                $email = $rs['email']
+                                ?>
+                                <p><?php echo $email; ?></p>
+                                <?php
+                                $sql = "select * from ar_emails limit 1,2";
+                                $query = mysqli_query($con, $sql);
+                                $rs=mysqli_fetch_array($query);
+                                $email = $rs['email']
+                                ?>
+                                <p><?php echo $email; ?></p>
                             </div>
                         </div>
                     </div>
@@ -69,6 +87,7 @@ include ('functions/functions.php');
     </div>
 </div>
 <!-- Header Logo Area End -->
+
 
 <div class="container-fluid bg-light">
     <div class="row">

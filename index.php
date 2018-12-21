@@ -2,6 +2,12 @@
 include ('includes/db.php');
 include ('functions/functions.php');
 ?>
+<?php
+$sql = "select * from texto_sobreNos";
+$query = mysqli_query($con, $sql);
+$rs = mysqli_fetch_array($query);
+$title_S = $rs['titulo'];
+?>
 
 <!doctype html>
 <html lang="en">
@@ -31,7 +37,8 @@ include ('functions/functions.php');
     $rs = mysqli_fetch_array($query);
     $imgF = $rs['imagem'];
 ?>
-<body style="background-image: url('css/imagens/<?php echo $imgF; ?>'); background-size: cover; background-attachment: fixed;">
+<body style="background: #f3f3f3;">
+<!--        style="background-image: url('css/imagens/--><?php //echo $imgF; ?><!--'); background-size: cover; background-attachment: fixed;"-->
 
 <div class="header-logo-area bg-success">
     <div class="container-fluid">
@@ -51,7 +58,7 @@ include ('functions/functions.php');
                 <div class="row">
                     <div class="col-md-6 col-sm-4 col-lg-6 col-xl-6 d-none d-sm-block">
                         <div class="header-logo-address">
-                            <div class="header-logo-icon iconAdjust"><i class="fa fa-phone-square"></i> </div>
+                            <div class="header-logo-icon iconAdjust1 d-md-none"><i class="fa fa-phone-square"></i> </div>
                             <div class="header-logo-text font-weight-bold text-center">
                                 <?php
                                     $sql = "select * from ar_pericia_telefones limit 0,1";
@@ -72,8 +79,8 @@ include ('functions/functions.php');
                     </div>
                     <div class="col-md-6 col-sm-4 col-lg-6 col-xl-6 d-none d-sm-block">
                         <div class="header-logo-address">
-                            <div class="header-logo-icon"> <i class="fa fa-envelope ml-4"></i> </div>
-                            <div class="header-logo-text font-weight-bold text-center">
+                            <div class="header-logo-icon d-md-none"><i class="fa fa-envelope ml-4"></i> </div>
+                            <div class="header-logo-text iconAdjust2 font-weight-bold text-center">
                                 <?php
                                 $sql = "select * from ar_emails limit 0,1";
                                 $query = mysqli_query($con, $sql);
@@ -171,7 +178,7 @@ include ('functions/functions.php');
 
 <div class="container-fluid" id="getColum">
     <div class="row">
-        <div class="col-md-8 col-sm-auto imgPrincipal">
+        <div class="col-md-9 col-sm-auto imgPrincipal">
             <?php
 
                 $sql ="select * from img_principal_ar";
@@ -196,39 +203,28 @@ include ('functions/functions.php');
                 echo "<h3 class=\"text-white mt-5 text-center animated fadeInLeft delay-1s\">$texto1</h3>";}
             ?><!-- return texto 2 image-->
             </header>
-            <div class="container-fluid" id="responsiveOnly">
-                <div class="row">
-                    <div class="col-md-12" data-aos="fade-right" data-aos-duration="2000">
-                        <div class="py-2 text-left txt">
-                            <?php
-                                $sql = "select * from texto_sobreNos";
-                                $query = mysqli_query($con,$sql);
-                                $rs = mysqli_fetch_array($query);
-                                $title_S = $rs['titulo'];
-                            ?>
-                            <h3><?php echo $title_S; ?></h3>
-                            <hr class="align-content-lg-start" style="background-color: darkgreen;">
+
+            <div class="container-fluid bg-light">
+                <div class="panel panel-default">
+                    <div class="container">
+                        <h2><?php echo $title_S; ?></h2>
+                        <div class="row">
+                            <div class="col-lg-8 col-md-12 col-sm-12">
+                                <p class="lead">
+                                    <?php txtSobreNos();  ?>
+                                </p>
+                            </div>
+                            <div class="col-lg-4 col-md-12 col-sm-12 py-3">
+                                <?php get_sobreImg();  ?>
+                            </div>
                         </div>
                     </div>
-                    <div class="col-md-6 imgSobre" data-aos="fade-left" data-aos-duration="2000">
-
-                        <?php
-                        get_sobreImg();
-                        ?>
-                    </div>
-
-                    <div class="col-md-6 imgSobre" data-aos="fade-up" data-aos-duration="2000" style="border: 5px solid white; overflow: auto">
-                        <?php
-                        txtSobreNos();
-                        ?>
-
-                    </div>
+                </div>
             </div>
-            </div><!-- ABOUT -->
 
-            <div class="container-fluid mt-4">
-                <div class="row">
-                    <div class="col-md-12 col-lg-12 col-xl-6 services bg-light" data-aos="slide-right" data-aos-duration="2000">
+            <div class="container-fluid">
+                <div class="row" data-aos="slide-right" data-aos-duration="2000">
+                    <div class="col-md-12 col-lg-12 col-xl-6 services bg-light">
                             <?php
                             $sql = "select * from coluna1";
                             $query = mysqli_query($db, $sql);
@@ -296,7 +292,7 @@ include ('functions/functions.php');
 
         </div>
 
-        <aside role="complementary" class="col-md-4 d-none d-sm-block news">
+        <aside role="complementary" class="col-md-3 d-none d-sm-block news">
             <div class="trt3-cover-component trt3-cover-component-last-news box-padrao">
                 <h2>
                     <span>Últimas Notícias</span>
@@ -306,7 +302,7 @@ include ('functions/functions.php');
                 $html ='';
                 $url= 'http://www.tst.jus.br/web/guest/noticias/-/asset_publisher/89Dk/rss';
                 $xml = simplexml_load_file($url);
-                for ($i = 0; $i < 7; $i++){
+                for ($i = 0; $i < 6; $i++){
                     $title = $xml->channel->item[$i]->title;
                     $description = $xml->channel->item[$i]->description;
                     $pubDate = $xml->channel->item[$i]->pubDate;
@@ -338,7 +334,6 @@ include ('functions/functions.php');
             </div>
         </aside>
     </div>
-</div>
 
 
 <!-- Our Featured Wrapper Start -->
@@ -360,4 +355,5 @@ include ('functions/functions.php');
 
 
 
+</div>
 <?php include('includes/footer.php'); ?>

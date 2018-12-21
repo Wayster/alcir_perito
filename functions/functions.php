@@ -83,8 +83,9 @@ function txtSobreNos(){
     $query = mysqli_query($db, $sql);
     while ($result = mysqli_fetch_array($query)){
         $sobre = $result['texto'];
+        $sobreF = nl2br($sobre);
 
-        echo "<h4 class=\"text-center my-5\">$sobre</h4>";
+        echo "<h4 class=\"lead text-center my-5\">$sobreF</h4>";
     }
 }
 
@@ -95,7 +96,7 @@ function get_sobreImg(){
     while ($result=mysqli_fetch_array($query)){
         $img = $result['imagem_sobre'];
 
-        echo "<img src=\"css/imagens/$img\" alt=\"Escritorio\" class=\"img-fluid img-thumbnail my-5\" style=\" width: 100%; max-height: 200px; overflow: auto\">";
+        echo "<img src=\"css/imagens/$img\" alt=\"Escritorio\" class=\"img-fluid img-thumbnail py-2\" style=\" width: 100%; max-height: 300px; overflow: auto\">";
     }
 }
 

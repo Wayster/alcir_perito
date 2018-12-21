@@ -54,11 +54,6 @@ if (isset($_GET['curso_id'])) {
 </head>
 <body>
 
-<!-- preloader start -->
-<div class="preloader">
-    <img src="css/imagens/pre.gif" alt="preloader">
-</div>
-
 <div class="header-logo-area bg-success">
     <div class="container-fluid">
         <div class="row">
