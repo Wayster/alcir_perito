@@ -58,7 +58,7 @@ $title_S = $rs['titulo'];
                 <div class="row">
                     <div class="col-md-6 col-sm-4 col-lg-6 col-xl-6 d-none d-sm-block">
                         <div class="header-logo-address">
-                            <div class="header-logo-icon iconAdjust1 d-md-none"><i class="fa fa-phone-square"></i> </div>
+                            <div class="header-logo-icon"><i class="fa fa-phone-square iconAdjust1"></i> </div>
                             <div class="header-logo-text font-weight-bold text-center">
                                 <?php
                                     $sql = "select * from ar_pericia_telefones limit 0,1";
@@ -79,7 +79,7 @@ $title_S = $rs['titulo'];
                     </div>
                     <div class="col-md-6 col-sm-4 col-lg-6 col-xl-6 d-none d-sm-block">
                         <div class="header-logo-address">
-                            <div class="header-logo-icon d-md-none"><i class="fa fa-envelope ml-4"></i> </div>
+                            <div class="header-logo-icon"><i class="fa fa-envelope ml-4"></i> </div>
                             <div class="header-logo-text iconAdjust2 font-weight-bold text-center">
                                 <?php
                                 $sql = "select * from ar_emails limit 0,1";

@@ -72,7 +72,7 @@ if (isset($_GET['curso_id'])) {
                 <div class="row">
                     <div class="col-md-4 col-sm-4 col-lg-6 col-xl-6">
                         <div class="header-logo-address">
-                            <div class="header-logo-icon"> <i class="fa fa-phone-square" style="margin-left: 140px;"></i> </div>
+                            <div class="header-logo-icon"> <i class="fa fa-phone-square iconAdjust1"></i> </div>
                             <div class="header-logo-text font-weight-bold text-center">
                                 <p>(31)3275-4538</p>
                                 <p>(31)3043-0469</p>
@@ -81,7 +81,7 @@ if (isset($_GET['curso_id'])) {
                     </div>
                     <div class="col-md-4 col-sm-4 col-lg-6 col-xl-6">
                         <div class="header-logo-address">
-                            <div class="header-logo-icon"> <i class="fa fa-envelope ml-4"></i> </div>
+                            <div class="header-logo-icon"> <i class="fa fa-envelope ml-2"></i> </div>
                             <div class="header-logo-text font-weight-bold text-center">
                                 <p>alcirpericia@bol.com.br</p>
                                 <p>contato@alcirperito.com.br</p>
