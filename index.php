@@ -22,7 +22,7 @@ $title_S = $rs['titulo'];
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/estilo2.css">
-    <link rel="stylesheet" href="css/coluna.css">
+    <link rel="stylesheet" href="css/coluna_box.css">
     <link rel="stylesheet" href="css/animate.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
     <link rel="stylesheet" href="css/aos.css">
@@ -58,7 +58,7 @@ $title_S = $rs['titulo'];
                 <div class="row">
                     <div class="col-md-6 col-sm-4 col-lg-6 col-xl-6 d-none d-sm-block">
                         <div class="header-logo-address">
-                            <div class="header-logo-icon"><i class="fa fa-phone-square iconAdjust1"></i> </div>
+                            <div class="header-logo-icon"><i class="fa fa-phone-square iconAdjust1 ml-5"></i> </div>
                             <div class="header-logo-text font-weight-bold text-center">
                                 <?php
                                     $sql = "select * from ar_pericia_telefones limit 0,1";
@@ -79,7 +79,7 @@ $title_S = $rs['titulo'];
                     </div>
                     <div class="col-md-6 col-sm-4 col-lg-6 col-xl-6 d-none d-sm-block">
                         <div class="header-logo-address">
-                            <div class="header-logo-icon"><i class="fa fa-envelope ml-4"></i> </div>
+                            <div class="header-logo-icon"><i class="fa fa-envelope ml-2"></i> </div>
                             <div class="header-logo-text iconAdjust2 font-weight-bold text-center">
                                 <?php
                                 $sql = "select * from ar_emails limit 0,1";

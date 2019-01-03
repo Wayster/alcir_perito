@@ -24,11 +24,6 @@ include ('functions/functions.php');
 </head>
 <body>
 
-<!-- preloader start -->
-<div class="preloader">
-    <img src="css/imagens/pre.gif" alt="preloader">
-</div>
-
 
 <div class="container-fluid bg-light">
     <div class="row">

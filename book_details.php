@@ -54,46 +54,6 @@ if (isset($_GET['curso_id'])) {
 </head>
 <body>
 
-<div class="header-logo-area bg-success">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-xl-6 col-lg-5 col-md-12" style="max-height: 200px;">
-                <div class="header_img">
-                    <?php
-                    $sql = "select * from ct_header";
-                    $query = mysqli_query($con, $sql);
-                    $rs = mysqli_fetch_array($query);
-                    $imagem = $rs['imagem'];
-                    ?>
-                    <img src="css/imagens/<?php echo $imagem; ?>" class="img-fluid img-thumbnail">
-                </div>
-            </div>
-            <div class="col-xl-6 col-lg-7 col-md-12 d-none d-lg-block d-md-block"style="max-height: 200px;">
-                <div class="row">
-                    <div class="col-md-4 col-sm-4 col-lg-6 col-xl-6">
-                        <div class="header-logo-address">
-                            <div class="header-logo-icon"> <i class="fa fa-phone-square iconAdjust1"></i> </div>
-                            <div class="header-logo-text font-weight-bold text-center">
-                                <p>(31)3275-4538</p>
-                                <p>(31)3043-0469</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 col-sm-4 col-lg-6 col-xl-6">
-                        <div class="header-logo-address">
-                            <div class="header-logo-icon"> <i class="fa fa-envelope ml-2"></i> </div>
-                            <div class="header-logo-text font-weight-bold text-center">
-                                <p>alcirpericia@bol.com.br</p>
-                                <p>contato@alcirperito.com.br</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- Header Logo Area End -->
 
 
 <div class="container-fluid bg-light">

@@ -687,7 +687,6 @@
 
 /* 1.2 common style */
 body {
-    background-color: #fff;
     overflow-x: hidden;
 }
 
@@ -1108,8 +1107,8 @@ button {
 
 .navigation .navbar {
     padding: 0;
-    background: #fff !important;
     position: relative;
+    background-image: linear-gradient(to top, #c1dfc4 0%, #deecdd 100%);
 }
 
 

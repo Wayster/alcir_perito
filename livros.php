@@ -21,7 +21,7 @@ include ('functions/functions.php');
     <script src="js/aos.js"></script>
     <script src="js/jquery.min.js"></script>
 </head>
-<body>
+<body style="background-image: linear-gradient(to top, #d5d4d0 0%, #d5d4d0 1%, #eeeeec 31%, #efeeec 75%, #e9e9e7 100%);">
 
 <div class="header-logo-area bg-success">
     <div class="container-fluid">
@@ -29,10 +29,11 @@ include ('functions/functions.php');
             <div class="col-xl-6 col-lg-5 col-md-4">
                 <div class="header_img">
                     <?php
-                    $sql = "select * from header_logo_ar";
+                    $sql = "select * from pagina_livros";
                     $query = mysqli_query($con, $sql);
                     $rs = mysqli_fetch_array($query);
-                    $imagem = $rs['imagem'];
+                    $imagem = $rs['img_logo'];
+                    $title = $rs['titulo'];
                     ?>
                     <img src="css/imagens/<?php echo $imagem; ?>" class="img-fluid img-thumbnail">
                 </div>
@@ -41,20 +42,20 @@ include ('functions/functions.php');
                 <div class="row">
                     <div class="col-md-6 col-sm-4 col-lg-6 col-xl-6 d-none d-sm-block">
                         <div class="header-logo-address">
-                            <div class="header-logo-icon"><i class="fa fa-phone-square iconAdjust1"></i> </div>
+                            <div class="header-logo-icon"><i class="fa fa-phone-square iconAdjust1 ml-5"></i> </div>
                             <div class="header-logo-text font-weight-bold text-center">
                                 <?php
-                                $sql = "select * from ar_pericia_telefones limit 0,1";
+                                $sql = "select * from pagina_livros ";
                                 $query = mysqli_query($con, $sql);
                                 $rs=mysqli_fetch_array($query);
-                                $tel1 = $rs['telefones']
+                                $tel1 = $rs['tel1']
                                 ?>
                                 <p><?php echo $tel1;?></p>
                                 <?php
-                                $sql = "select * from ar_pericia_telefones limit 1,2";
+                                $sql = "select * from pagina_livros";
                                 $query = mysqli_query($con, $sql);
                                 $rs=mysqli_fetch_array($query);
-                                $tel2 = $rs['telefones']
+                                $tel2 = $rs['tel2']
                                 ?>
                                 <p><?php echo $tel2;?></p>
                             </div>
@@ -62,20 +63,20 @@ include ('functions/functions.php');
                     </div>
                     <div class="col-md-6 col-sm-4 col-lg-6 col-xl-6 d-none d-sm-block">
                         <div class="header-logo-address">
-                            <div class="header-logo-icon"> <i class="fa fa-envelope ml-4"></i> </div>
+                            <div class="header-logo-icon"> <i class="fa fa-envelope ml-2"></i> </div>
                             <div class="header-logo-text iconAdjust2 font-weight-bold text-center">
                                 <?php
-                                $sql = "select * from ar_emails limit 0,1";
+                                $sql = "select * from pagina_livros";
                                 $query = mysqli_query($con, $sql);
                                 $rs=mysqli_fetch_array($query);
-                                $email = $rs['email']
+                                $email = $rs['email1']
                                 ?>
                                 <p><?php echo $email; ?></p>
                                 <?php
-                                $sql = "select * from ar_emails limit 1,2";
+                                $sql = "select * from pagina_livros";
                                 $query = mysqli_query($con, $sql);
                                 $rs=mysqli_fetch_array($query);
-                                $email = $rs['email']
+                                $email = $rs['email2']
                                 ?>
                                 <p><?php echo $email; ?></p>
                             </div>
@@ -159,8 +160,15 @@ include ('functions/functions.php');
     </div>
 </div>
 
-<div class="container-fluid" style="background-image: url('css/imagens/slidercursos.png'); background-size: cover; height: 250px; background-attachment: fixed;">
-        <h1 class="text-center text-white pt-5 font-weight-bold ">Livros Lançados</h1>
+
+<?php
+    $sql = "select * from pagina_livros";
+    $query = mysqli_query($con, $sql);
+    $rs = mysqli_fetch_array($query);
+    $img_deep = $rs['img_deep'];
+?>
+<div class="container-fluid" style="background-image: url('css/imagens/<?php echo $img_deep; ?>'); background-size: cover; height: 250px; background-attachment: fixed;">
+        <h1 class="text-center text-white pt-5 font-weight-bold "><?php echo  $title; ?></h1>
     <ul class="page-breadcrumb" style="margin-top: 60px">
                     <li><a href="index.php">Home</a></li>
                     <li>cursos e treinamentos</li>
@@ -169,7 +177,7 @@ include ('functions/functions.php');
 </div>
 
 <!-- service -->
-<section class="section" style="margin-top: 60px;" id="cursos">
+<section class="section" style="margin-top: 0px;" id="cursos">
     <div class="container-fluid ">
         <div class="row justify-content-center">
             <div class="col-lg-12 text-center" data-aos="zoom-in-up" data-aos-duration="2000">
@@ -190,13 +198,13 @@ include ('functions/functions.php');
                 echo "
             
                  <div class=\"col-lg-4 col-sm-6 mb-5 mb-lg-0\" data-aos='zoom-in-down' data-aos-duration='2000'>
-                <div class=\"card bg-light text-center\">
-                    <h4 class=\"card-title pt-3\" style='min-height: 85px; max-height: 85px; overflow: auto'>$titulo</h4>
+                <div class=\"card text-center\">
+                    <h3 class=\"card-title pt-3\" style='min-height: 85px; max-height: 85px; overflow: auto'>$titulo</h3>
                     <div class=\"card-img-wrapper\">
                         <img class=\"card-img-top rounded-0 img-fluid\" src=\"css/imagens/$img\" alt=\"service-image\"
                           style='min-height: 250px; max-height: 250px; overflow: auto'>
                     </div>
-                    <div class=\"card-body bg-light\">
+                    <div class=\"card-body\">
                         <i class=\"square-icon translateY-33\">
                             <i class=\" py-2 fas fa-briefcase my-auto\"></i>
                         </i>

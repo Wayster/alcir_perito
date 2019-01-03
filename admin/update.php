@@ -260,7 +260,6 @@ if(!isset($_SESSION["email"]) || !isset($_SESSION["senha"])){
     }
     ?><!-- update email 2 -->
 
-
     <?php
         if (isset($_POST['save_img1'])){
 
@@ -283,6 +282,7 @@ if(!isset($_SESSION["email"]) || !isset($_SESSION["senha"])){
             }
         }
     ?>
+
     <?php
     if (isset($_POST['footer_save'])){
 
@@ -348,7 +348,6 @@ if(!isset($_SESSION["email"]) || !isset($_SESSION["senha"])){
     }
     ?><!-- update text footer side 2 -->
 
-
     <?php
     if (isset($_POST['save_title_ct'])){
 
@@ -389,7 +388,6 @@ if(!isset($_SESSION["email"]) || !isset($_SESSION["senha"])){
     }
     ?>
 
-
     <?php
     if (isset($_POST['save_descr_ct'])){
 
@@ -410,7 +408,6 @@ if(!isset($_SESSION["email"]) || !isset($_SESSION["senha"])){
     }
     ?>
 
-
     <?php
     if (isset($_POST['saveImg_about'])){
 
@@ -429,10 +426,113 @@ if(!isset($_SESSION["email"]) || !isset($_SESSION["senha"])){
             echo "<script>window.open('painel.php?cursosetreinamentos_About', '_self')</script>";
         }else {
             echo "<script>alert('OCORREU UM ERRO')</script>";
-//           echo "<script>window.open('painel.php?cursosetreinamentos_About', '_self')</script>";
-            echo mysqli_error($con);
+           echo "<script>window.open('painel.php?cursosetreinamentos_About', '_self')</script>";
+//            echo mysqli_error($con);
 
         }
     }
     ?>
+
+    <?php
+        if (isset($_POST['save_logo_book'])){
+
+            $img_logo_book =$_FILES['img_logo_book']['name'];
+            $temp_name_book_logo = $_FILES['img_logo_book']['temp_name'];
+
+            move_uploaded_file($temp_name_book_logo, "../css/imagens/$img_logo_book");
+
+            $sql = "update pagina_livros set img_logo = '$img_logo_book'";
+            $query = mysqli_query($con, $sql);
+
+
+            if ($query){
+                echo "<script>alert('IMAGEM INSERIDA COM SUCESSO')</script>";
+                echo "<script>window.open('painel.php?page_book', '_self')</script>";
+            }else {
+                echo "<script>alert('OCORREU UM ERRO')</script>";
+           echo "<script>window.open('painel.php?page_book', '_self')</script>";
+//                echo mysqli_error($con);
+
+            }
+
+
+        }
+    ?>
+
+    <?php
+        if (isset($_POST['footer_save_textos'])){
+
+            $tel1 = $_POST['tel1'];
+            $tel2 = $_POST['tel2'];
+
+            $email1 = $_POST['email1'];
+            $email2 = $_POST['email2'];
+
+            $sql = "update pagina_livros set tel1='$tel1', tel2='$tel2', email1='$email1', email2='$email2'";
+
+            $query = mysqli_query($con,$sql);
+
+            if ($query){
+                echo "<script>alert('INFORMAÇÕES ATUALIZADAS COM SUCESSO')</script>";
+                echo "<script>window.open('painel.php?page_book', '_self')</script>";
+            }else {
+                echo "<script>alert('OCORREU UM ERRO')</script>";
+          echo "<script>window.open('painel.php?page_book', '_self')</script>";
+//                echo mysqli_error($con);
+
+            }
+
+
+        }
+    ?>
+
+    <?php
+
+    if (isset($_POST['save_title'])){
+
+        $texto = $_POST['titulo_livros'];
+
+        $sql = "update pagina_livros set titulo='$texto'";
+        $query = mysqli_query($con, $sql);
+
+        $query = mysqli_query($con,$sql);
+
+        if ($query){
+            echo "<script>alert('INFORMAÇÕES ATUALIZADAS COM SUCESSO')</script>";
+            echo "<script>window.open('painel.php?page_book', '_self')</script>";
+        }else {
+            echo "<script>alert('OCORREU UM ERRO')</script>";
+           echo "<script>window.open('painel.php?page_book', '_self')</script>";
+  //          echo mysqli_error($con);
+
+        }
+
+    }
+    ?>
+
+    <?php
+        if (isset($_POST['save_img_bookLogo'])){
+
+            $imgBook =$_FILES['book_logo_img']['name'];
+            $temp_name_book = $_FILES['book_logo_img']['tmp_name'];
+
+            move_uploaded_file($temp_name_book, "../css/imagens/$imgBook");
+
+            $update = "update pagina_livros set img_deep='$imgBook'";
+            $query = mysqli_query($con, $update);
+
+            if ($query){
+                echo "<script>alert('INFORMAÇÕES ATUALIZADAS COM SUCESSO')</script>";
+                echo "<script>window.open('painel.php?page_book', '_self')</script>";
+            }else {
+                echo "<script>alert('OCORREU UM ERRO')</script>";
+                //echo "<script>window.open('painel.php?page_book', '_self')</script>";
+                          echo mysqli_error($con);
+
+            }
+
+
+        }
+    ?>
+
 <?php } ?>

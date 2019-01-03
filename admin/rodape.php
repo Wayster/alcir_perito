@@ -5,7 +5,7 @@
         </div>
     </div>
     <div class="panel-body">
-        <div class="col-lg-4 col-md-4">
+        <div class="col-lg-4 col-md-10">
             <div class="text-center text-md-left ">
                 <?php
                 $sql = "select * from footer_img1";
@@ -25,7 +25,7 @@
             </div>
         </div>
 
-        <div class="col-lg-8"><!-- col-lg-12 Starts -->
+        <div class="col-lg-7 col-md-10"><!-- col-lg-12 Starts -->
 
             <div class="panel panel-default" ><!-- panel panel-default Starts -->
 
@@ -101,7 +101,7 @@
         </div>
     </div>
     <div class="panel-body">
-        <div class="col-lg-4 col-md-4">
+        <div class="col-lg-4 col-md-10">
             <div class="text-center text-md-left ">
                 <?php
                 $sql = "select * from footer_img2";
@@ -121,7 +121,7 @@
             </div>
         </div>
 
-        <div class="col-lg-8"><!-- col-lg-12 Starts -->
+        <div class="col-lg-8 col-md-10"><!-- col-lg-12 Starts -->
 
             <div class="panel panel-default" ><!-- panel panel-default Starts -->
 

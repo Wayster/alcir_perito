@@ -1,5 +1,5 @@
 <!-- footer -->
-<footer class="" style="border:5px solid darkgreen !important; background-color: #dadfe2">
+<footer class="" style="border:5px solid darkgreen !important; background-image: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);">
     <div class="py-50">
         <div class="container-fluid">
             <div class="row">

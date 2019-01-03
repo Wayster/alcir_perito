@@ -27,27 +27,7 @@ include ('functions/functions.php');
     <script src="js/aos.js"></script>
 
 </head>
-<body>
-
-
-
-<!-- preloader start -->
-<div class="preloader">
-    <img src="css/imagens/pre.gif" alt="preloader">
-</div>
-
-<div class="container-fluid bg-light">
-    <div class="row">
-        <div class="col-lg-6">
-            <img src="css/imagens/ar.png" class="img-fluid animated fadeInRight delay-1s">
-        </div>
-
-        <div class="col-lg-6 animated fadeInLeft delay-1s " style="border: 5px solid darkgreen;" id="telaDireita">
-                <img src="css/imagens/logoarle.png" class="img-fluid animated fadeInRight delay-1s">
-        </div>
-
-    </div>
-</div>
+<body style="background-image: linear-gradient(to top, #d5d4d0 0%, #d5d4d0 1%, #eeeeec 31%, #efeeec 75%, #e9e9e7 100%);">
 
 
 <div class="container-fluid bg-light">

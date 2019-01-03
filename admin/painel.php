@@ -54,7 +54,7 @@ if(!isset($_SESSION["email"]) || !isset($_SESSION["senha"])){
                 <span class="fa fa-tasks"></span>
             </a>
             <div class="navbar-custom-menu">
-                <a href="logout.php"><h4 class="text-white"><button class="btn btn-success btn-lg"><i class="fas fa-sign-out-alt"></i> Sair</button></h4></a>
+                <a href="logout.php"><h4 class="text-white"><button class="btn btn-danger btn-lg"><i class="fas fa-sign-out-alt"></i> Sair</button></h4></a>
             </div>
         </nav>
     </header>
@@ -147,6 +147,15 @@ if(!isset($_SESSION["email"]) || !isset($_SESSION["senha"])){
                 </li>
 
                 <li class="treeview">
+                    <a href="?page_book">
+                        <i class="fas fa-book"></i> <span>PAGINA LIVROS</span>
+                        <span class="pull-right-container">
+                                    <i class="fa fa-angle-left pull-right"></i>
+                        </span>
+                    </a>
+                </li>
+
+                <li class="treeview">
                     <a href="#">
                         <i class="fas fa-book"></i> <span>MATERIAIS DIVERSOS</span>
                         <span class="pull-right-container">
@@ -191,7 +200,7 @@ if(!isset($_SESSION["email"]) || !isset($_SESSION["senha"])){
                 <i class="fa fa-tachometer"></i>
             </div>
             <div class="header-title">
-                <h1>Painel de Administracao</h1>
+                <h1>DASHBOARD</h1>
             </div>
         </section>
 
@@ -269,6 +278,10 @@ if(!isset($_SESSION["email"]) || !isset($_SESSION["senha"])){
                     if (isset($_GET['rodape'])){
                         include ("rodape.php");
                     };
+
+                    if (isset($_GET['page_book'])){
+                        include ('page_livros.php');
+                    }
 
                     ?>
 

@@ -17,7 +17,7 @@ include ('functions/functions.php');
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/estilo2.css">
-    <link rel="stylesheet" href="css/coluna.css">
+    <link rel="stylesheet" href="css/coluna_box.css">
     <link rel="stylesheet" href="css/animate.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
     <link rel="stylesheet" href="css/aos.css">
@@ -26,7 +26,7 @@ include ('functions/functions.php');
 
 </head>
 
-<body>
+<body style="background-image: linear-gradient(to top, #d5d4d0 0%, #d5d4d0 1%, #eeeeec 31%, #efeeec 75%, #e9e9e7 100%);">
 
 
 <div class="container-fluid bg-light">
@@ -138,7 +138,7 @@ include ('functions/functions.php');
                                <p><?php echo $descricao ?></p>
                            </td>
                            <td>
-                               <a href='<?php echo $download ?>' target='_blank'><button class='btn btn-success btn-md'><span class="mx-4">download</span><i class="fas fa-file-download"></i></button></a>
+                               <a href='<?php echo $download ?>' target='_blank'><button class='btn btn-success btn-md'><span class="mx-4">acessar</span><i class="fas fa-file-download"></i></button></a>
                            </td>
                        </tr>
 

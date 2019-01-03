@@ -18,9 +18,9 @@
 </head>
 
 <body class="text-center">
-<form class="form-signin" method="post" action="functions/login.php">
+<form class="form-signin border bg-light" method="post" action="functions/login.php">
     <img class="mb-4" src="../css/imagens/ar.png" alt="" width="272" height="72" class="img-fluid img-thumbnail">
-    <h1 class="h3 mb-3 font-weight-normal">Por Favor Faca Login</h1>
+    <h1 class="h3 mb-3 font-weight-normal">Por Favor Faça Login</h1>
     <label for="inputEmail" class="sr-only">Email </label>
     <input type="text"  class="form-control" placeholder="Email" name="email" required autofocus>
 
