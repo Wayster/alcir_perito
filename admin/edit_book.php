@@ -54,7 +54,7 @@ if(!isset($_SESSION["email"]) || !isset($_SESSION["senha"])){
                     <span class="fa fa-tasks"></span>
                 </a>
                 <div class="navbar-custom-menu">
-                    <h4 class="text-white">BEM VINDO AO PAINEL DE ADMINISTRACAO DO WEBSITE</h4>
+                    <a href="logout.php"><h4 class="text-white"><button class="btn btn-danger btn-lg"><i class="fas fa-sign-out-alt"></i> Sair</button></h4></a>
                 </div>
             </nav>
         </header>
@@ -86,11 +86,11 @@ if(!isset($_SESSION["email"]) || !isset($_SESSION["senha"])){
                                 </span>
                         </a>
                         <ul class="treeview-menu">
-                            <li><a href="painel.php?cabecalhoArPericia">Cabecalho</a></li>
-                            <li><a href="painel.php?imgTPrincipal">Imagem e texto Principal</a></li>
-                            <li><a href="painel.php?sobre_ar">Sobre Nos</a></li>
-                            <li><a href="painel.php?sliders_ar">Sliders e Titulo</a></li>
-
+                            <li><a href="?cabecalhoArPericia">Cabecalho</a></li>
+                            <li><a href="?imgTPrincipal">Imagem e texto Principal</a></li>
+                            <li><a href="?sobre_ar">Sobre Nos</a></li>
+                            <li><a href="?sliders_ar">Sliders e Titulo</a></li>
+                            <li><a href="?coluna1">Servicos</a></li>
                         </ul>
                     </li>
                     <li class="treeview">
@@ -101,12 +101,43 @@ if(!isset($_SESSION["email"]) || !isset($_SESSION["senha"])){
                                 </span>
                         </a>
                         <ul class="treeview-menu">
-                            <li><a href="painel.php?cursosetreinamentos_header">Cabecalho</a></li>
-                            <li><a href="painel.php?cursosetreinamentos_imagem">Imagem Fundo</a></li>
-                            <li><a href="painel.php?cursosetreinamentos_About">Texto Sobre Nos</a></li>
+                            <li><a href="?cursosetreinamentos_header">Cabecalho</a></li>
+                            <li><a href="?cursosetreinamentos_imagem">Imagem Fundo</a></li>
+                            <li><a href="?cursosetreinamentos_About">Texto Sobre Nos</a></li>
 
                         </ul>
                     </li>
+
+                    <li class="treeview">
+                        <a href="">
+                            <i class="fas fa-book"></i> <span>PAGINA LIVROS</span>
+                            <span class="pull-right-container">
+                                    <i class="fa fa-angle-left pull-right"></i>
+                        </span>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li><a href="?page_book">cabecalho e imagem de fundo</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="treeview">
+                        <a href="?page_videos">
+                            <i class="fas fa-book"></i> <span>PAGINA VIDEOS</span>
+                            <span class="pull-right-container">
+                                    <i class="fa fa-angle-left pull-right"></i>
+                        </span>
+                        </a>
+                    </li>
+
+                    <li class="treeview">
+                        <a href="?page_contato">
+                            <i class="fas fa-book"></i> <span>PAGINA CONTATO</span>
+                            <span class="pull-right-container">
+                                    <i class="fa fa-angle-left pull-right"></i>
+                        </span>
+                        </a>
+                    </li>
+
                     <li class="treeview">
                         <a href="#">
                             <i class="far fa-images"></i><span>GALERIA</span>
@@ -115,8 +146,8 @@ if(!isset($_SESSION["email"]) || !isset($_SESSION["senha"])){
                                 </span>
                         </a>
                         <ul class="treeview-menu">
-                            <li><a href="painel.php?add_image_galeria">Adicionar Imagem</a></li>
-                            <li><a href="painel.php?delete_image_galery">Editar ou Excluir Imagens</a></li>
+                            <li><a href="?add_image_galeria">Adicionar Imagem</a></li>
+                            <li><a href="?delete_image_galery">Editar ou Excluir Imagens</a></li>
                         </ul>
                     </li>
                     <li class="treeview">
@@ -127,24 +158,25 @@ if(!isset($_SESSION["email"]) || !isset($_SESSION["senha"])){
                                 </span>
                         </a>
                         <ul class="treeview-menu">
-                            <li><a href="painel.php?add_cursos">Adicionar Cursos</a></li>
-                            <li><a href="painel.php?edit_cursos">Editar Cursos</a></li>
+                            <li><a href="?add_cursos">Adicionar Cursos</a></li>
+                            <li><a href="?edit_cursos">Editar Cursos</a></li>
 
                         </ul>
                     </li>
                     <li class="treeview">
                         <a href="#">
-                            <i class="fas fa-book"></i> <span>LIVROS</span>
+                            <i class="fas fa-book"></i> <span>CURSOS EM LIVROS</span>
                             <span class="pull-right-container">
                                     <i class="fa fa-angle-left pull-right"></i>
                                 </span>
                         </a>
                         <ul class="treeview-menu">
-                            <li><a href="painel.php?add_livros">Adicionar Livros</a></li>
-                            <li><a href="painel.php?edit_livro">Editar Livros</a></li>
-
+                            <li><a href="?add_livros">Adicionar Livros</a></li>
+                            <li><a href="?edit_livro">Editar Livros</a></li>
+                            <li><a href="?pag_livro">texto pagamento</a></li>
                         </ul>
                     </li>
+
                     <li class="treeview">
                         <a href="#">
                             <i class="fas fa-book"></i> <span>MATERIAIS DIVERSOS</span>
@@ -153,12 +185,31 @@ if(!isset($_SESSION["email"]) || !isset($_SESSION["senha"])){
                                 </span>
                         </a>
                         <ul class="treeview-menu">
-                            <li><a href="painel.php?add_materiais">Adicionar Materiais</a></li>
-                            <li><a href="painel.php?edit_materiais">Editar Materiais</a></li>
+                            <li><a href="?add_materiais">Adicionar Materiais</a></li>
+                            <li><a href="?edit_materiais">Editar Materiais</a></li>
 
                         </ul>
                     </li>
 
+
+                    <li class="treeview">
+                        <a href="?rodape">
+                            <i class="fas fa-solar-panel"></i><span>RODAPE</span>
+                            <span class="pull-right-container">
+                          <i class="fa fa-angle-left pull-right"></i>
+                        </span>
+                        </a>
+                    </li>
+
+
+                    <li class="treeview">
+                        <a href="https://webmail.hostinger.com.br/auth" target="_blank">
+                            <i class="fas fa-book"></i> <span>EMAIL</span>
+                            <span class="pull-right-container">
+                        <i class="fas fa-globe"></i>
+                        </span>
+                        </a>
+                    </li>
                 </ul>
             </div> <!-- /.sidebar -->
         </aside>
