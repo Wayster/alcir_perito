@@ -107,6 +107,37 @@ if(!isset($_SESSION["email"]) || !isset($_SESSION["senha"])){
 
                     </ul>
                 </li>
+
+                <li class="treeview">
+                    <a href="">
+                        <i class="fas fa-book"></i> <span>PAGINA LIVROS</span>
+                        <span class="pull-right-container">
+                                    <i class="fa fa-angle-left pull-right"></i>
+                        </span>
+                    </a>
+                    <ul class="treeview-menu">
+                        <li><a href="?page_book">cabecalho e imagem de fundo</a></li>
+                    </ul>
+                </li>
+
+                <li class="treeview">
+                    <a href="?page_videos">
+                        <i class="fas fa-book"></i> <span>PAGINA VIDEOS</span>
+                        <span class="pull-right-container">
+                                    <i class="fa fa-angle-left pull-right"></i>
+                        </span>
+                    </a>
+                </li>
+
+                <li class="treeview">
+                    <a href="?page_contato">
+                        <i class="fas fa-book"></i> <span>PAGINA CONTATO</span>
+                        <span class="pull-right-container">
+                                    <i class="fa fa-angle-left pull-right"></i>
+                        </span>
+                    </a>
+                </li>
+
                 <li class="treeview">
                     <a href="#">
                         <i class="far fa-images"></i><span>GALERIA</span>
@@ -134,7 +165,7 @@ if(!isset($_SESSION["email"]) || !isset($_SESSION["senha"])){
                 </li>
                 <li class="treeview">
                     <a href="#">
-                        <i class="fas fa-book"></i> <span>LIVROS</span>
+                        <i class="fas fa-book"></i> <span>CURSOS EM LIVROS</span>
                         <span class="pull-right-container">
                                     <i class="fa fa-angle-left pull-right"></i>
                                 </span>
@@ -142,17 +173,8 @@ if(!isset($_SESSION["email"]) || !isset($_SESSION["senha"])){
                     <ul class="treeview-menu">
                         <li><a href="?add_livros">Adicionar Livros</a></li>
                         <li><a href="?edit_livro">Editar Livros</a></li>
-
+                        <li><a href="?pag_livro">texto pagamento</a></li>
                     </ul>
-                </li>
-
-                <li class="treeview">
-                    <a href="?page_book">
-                        <i class="fas fa-book"></i> <span>PAGINA LIVROS</span>
-                        <span class="pull-right-container">
-                                    <i class="fa fa-angle-left pull-right"></i>
-                        </span>
-                    </a>
                 </li>
 
                 <li class="treeview">
@@ -281,6 +303,18 @@ if(!isset($_SESSION["email"]) || !isset($_SESSION["senha"])){
 
                     if (isset($_GET['page_book'])){
                         include ('page_livros.php');
+                    }
+
+                    if (isset($_GET['page_videos'])){
+                        include('pagina_videos.php');
+                    }
+
+                    if (isset($_GET['page_contato'])){
+                        include ('contato.php');
+                    }
+
+                    if (isset($_GET['pag_livro'])){
+                        include ('pagamentos_livros.php');
                     }
 
                     ?>

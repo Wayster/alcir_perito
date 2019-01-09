@@ -1,3 +1,18 @@
+<?php
+include ('includes/db.php');
+$sql = " select * from contato";
+$query = mysqli_query($con, $sql);
+$rs = mysqli_fetch_array($query);
+$title_endereco = $rs['titulo_endereco'];
+nl2br($texto1 = $rs['texto_caixa1']);
+$title_endereco2 = $rs['titulo_endereco2'];
+nl2br($texto2 = $rs['texto_caixa2']);
+$title_email = $rs['email_title'];
+$email = $rs['email'];
+$title_cel = $rs['cel_title'];
+$cel = $rs['cel'];
+
+?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -182,28 +197,28 @@
             </div>
             <div class="col-lg-5 mb-md-5 pl-lg-5">
                 <ul class="contact-info-list">
-                    <li><span class="fa fa-map"></span><b>Endereco</b><p>
-                            Rua Timbiras, 2645 - sala 402 <br> Santo Agostinho <br> Belo Horizonte - MG <br> Cep 30.160-061
+                    <li><span class="fa fa-map"></span><b><?php echo $title_endereco;?></b>
+                        <p>
+                            <?php echo nl2br($texto1); ?>
                         </p>
                         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3750.9880821811557!2d-43.95020738557065!3d-19.924907043295395!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xfa94548c7361bae6!2sAlcirperito!5e0!3m2!1spt-BR!2sbr!4v1543771522584"
                                 width="300" height="100" frameborder="0" style="border:0" allowfullscreen></iframe>
                     </li>
 
-                    <li><span class="fa fa-map"></span><b>Filial - Vitoria /ES</b><p>
-                            R. Affonso Claudio, 32 - 2º andar<br>Praia do Canto <br> Vitoria - ES <br> CEP 29055-570
+                    <li><span class="fa fa-map"></span><b><?php echo $title_endereco2;?></b>
+                        <p>
+                            <?php echo nl2br($texto2); ?>
                         </p>
                         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3742.07921666233!2d-40.293798985562205!3d-20.296987955066257!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xb817ec5b4b829d%3A0x2467dd489f18eb47!2sR.+Afonso+Cl%C3%A1udio%2C+32+-+2%C2%BA+andar+-+Praia+do+Canto%2C+Vit%C3%B3ria+-+ES%2C+29055-570!5e0!3m2!1spt-BR!2sbr!4v1543771320850"
                                 width=300" height="100" frameborder="0" allowfullscreen>
                         </iframe>
                     </li>
 
-                    <li><span class="fa fa-envelope"></span><b>Email</b>alcirpericia@bol.com.br <br>contato@alcirperito.com.br </li>
-                    <li><span class="fa fa-phone"></span><b>Phone / Whatsapp</b>31 3275 4538 <br>
-                        31 3043 0469 <br>
-                        31 98657 8582 <i class="fab fa-whatsapp"></i> </li>
-                </ul>
-                <ul class="social-icon-three">
-
+                    <li><span class="fa fa-envelope"></span><b><?php echo $title_email;?></b>
+                       <?php echo nl2br($email);?>
+                    </li>
+                    <li><span class="fa fa-phone"></span><b><?php echo $title_cel;?></b>
+                        <?php echo nl2br($cel); ?> <i class="fab fa-whatsapp"></i> </li>
                 </ul>
             </div>
 
@@ -222,7 +237,7 @@ include ('includes/footer.php');
 
 
 
-<script src="js/bootstrap4.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
 <script src="js_arle/script.js"></script>
 </body>
 </html>

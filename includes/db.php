@@ -1,6 +1,6 @@
 <?php
 
-    $con = mysqli_connect("localhost", "root", "deus", "alcir_perito");
+    $con = mysqli_connect("localhost", "root", "deus", "u728536737_teste");
 
     if ($con){
 

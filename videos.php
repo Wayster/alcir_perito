@@ -1,5 +1,10 @@
 <?php
 include ('includes/db.php');
+$sql = "select * from pagina_videos";
+$query = mysqli_query($con,$sql);
+$rs = mysqli_fetch_array($query);
+$title_page = $rs['titulo'];
+$img = $rs['img_fundo'];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -99,8 +104,8 @@ include ('includes/db.php');
     </div>
 </div>
 
-<div class="container-fluid" style="background-image: url('css/imagens/slidercursos.png'); background-size: cover; height: 250px; background-attachment: fixed;">
-    <h1 class="text-center text-white pt-5 font-weight-bold ">Algumas dicas úteis</h1>
+<div class="container-fluid" style="background-image: url('css/imagens/<?php echo $img; ?>'); background-size: cover; height: 350px; background-attachment: fixed;">
+    <h1 class="text-center text-white pt-5 font-weight-bold "><?php echo $title_page; ?></h1>
     <ul class="page-breadcrumb" style="margin-top: 60px">
         <li><a href="index.php">Home</a></li>
         <li>videos</li>

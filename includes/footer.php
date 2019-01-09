@@ -21,24 +21,28 @@
                             ?>
                         </p>
                         <!-- social icon -->
+                        <?php
+                        include ('includes/db.php');
+                        $sql = "select * from social_media";
+                        $query = mysqli_query($con, $sql);
+                        $rs = mysqli_fetch_array($query);
+                        $face = $rs['facebook'];
+                        $instagram = $rs['instagram'];
+                        $link = $rs['linkedlin'];
+                        ?>
                         <ul class="list-inline">
                             <li class="list-inline-item">
-                                <a class="social-icon-outline" href="#">
+                                <a class="social-icon-outline" target="_blank" href="<?php echo $face;?>">
                                     <i class="fab fa-facebook" style="color:darkgreen;"></i>
                                 </a>
                             </li>
                             <li class="list-inline-item">
-                                <a class="social-icon-outline" href="#">
-                                    <i class="fab fa-twitter" style="color:darkgreen;"></i>
-                                </a>
-                            </li>
-                            <li class="list-inline-item">
-                                <a class="social-icon-outline" href="#">
+                                <a class="social-icon-outline" target="_blank" href="<?php echo $instagram;?>">
                                     <i class="fab fa-instagram" style="color:darkgreen;"></i>
                                 </a>
                             </li>
                             <li class="list-inline-item">
-                                <a class="social-icon-outline" href="#">
+                                <a class="social-icon-outline" target="_blank" href="<?php echo $link;?>">
                                     <i class="fab fa-linkedin" style="color:darkgreen;"></i>
                                 </a>
                             </li>
@@ -118,7 +122,7 @@
             <div class="row">
                 <div class="col-lg-6 col-md-5">
                     <p class="text-white text-center text-md-left">
-                        <span class="text-success">ALCIR PERITO</span> &copy; 2018 Todos Os Direitos Reservados</p>
+                        <span class="text-success">ALCIR PERITO</span> &copy; 2019 Todos Os Direitos Reservados</p>
                 </div>
                 <div class="col-lg-6 col-md-3">
                     <ul class="list-inline text-center text-md-right">

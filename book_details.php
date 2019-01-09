@@ -235,31 +235,34 @@ if (isset($_GET['curso_id'])) {
 
                 ?>
                 <div class="jumbotron jumbotron">
-                    <h4 class="" style="margin-top: -40px;">Opção 01 - Depósito ou Transferência Bancária <i class="far fa-money-bill-alt ml-2"></i></h4>
-                    <P>Caixa Econômica Federal - Agência - 0085 - Conta - 091 0990 -6 - Poupança - 013 <br>
-                        Titular- Alcir Rodrigues Ferreira - CPF - 791 865 136 72</P>
-
-                    <p>Banco Itaú - Agência - 7453 - Conta Corrente - 25 203-8 <br>
-                     Titular - ARLE Editora/Edivania C. Souza - CNPJ - 27.409.092/0001-14</p>
+                    <?php
+                    include('../includes/db.php');
+                    $sql = "select * from pagamento_livros";
+                    $query = mysqli_query($con, $sql);
+                    $rs = mysqli_fetch_array($query);
+                    $option1 = nl2br($rs['opcao1']);
+                    $option2 = nl2br($rs['opcao2']);
+                    $entrega = nl2br($rs['entrega']);
+                    $info = nl2br($rs['info']);
+                    ?>
+                    <div class="" style="margin-top: -40px;">
+                        <p class="">
+                            <?php echo $option1;?>
+                        </p>
                     <hr>
-                    <h4>Opção 02 - Boleto Bancário <i class="fas fa-envelope-square ml-2"></i></h4>
+                    <hr>
                     <p>
-                        Em caso de Boleto Bancário enviar email para <span class="text-success">alcirpericia@bol.com.br</span>
-                        <br> ou Whatsapp <span class="font-weight-bold">(31)98591 9887</span> ou <span class="font-weight-bold">( 31)98657 8582</span>, com os seguintes dados:
-
-                        Nome, telefone, email, Endereço e CPF
+                        <?php echo $option2;?>
                     </p>
                     <hr>
-                    <h4>Dados para entrega <i class="fas fa-truck ml-2"></i></h4>
-                    <p>A entrega será feita em até 07 (sete) dias, <span class="text-danger">sem custo para o adquirente.</span></p>
                     <p>
-                        Pedimos que envie pelo email- <span class="text-success">alcirpericia@bol.com.br</span> ou Whatsapp <span class="font-weight-bold">(31)98591 9887</span> ou <span class="font-weight-bold">( 31)98657 8582</span>, o comprovante de pagamento e os seguintes dados:
+                        <?php echo $entrega;?>
                     </p>
-                    <p>Nome, telefone, email, Endereço completo ( com CEP)</p>
                     <hr>
-                    <h4>Informações adicionais :</h4>
-                    <p> <i class="fas fa-phone"> (31)3043-0469</i><br></p>
-                    <p class="font-weight-bold"> <i class="fab fa-whatsapp"> (31)98591-9887</i>, Falar com Edivânia.</p>
+                        <hr>
+                        <p>
+                            <?php echo $info;?>
+                        </p>
                 </div>
 
                 <!-- nav tabs menu -->
@@ -296,9 +299,9 @@ if (isset($_GET['curso_id'])) {
                             while ($rs = mysqli_fetch_array($query_curso)) {
                                 $obj = $rs['objetivo'];
 
-                                echo " <h4>
+                                echo " <p>
                                           $obj
-                                        </h4>";
+                                        </p>";
                             }
                         }
 
@@ -317,7 +320,7 @@ if (isset($_GET['curso_id'])) {
                                 $public = $rs['publico'];
                         }
                         ?>
-                        <h5><?php echo nl2br($conteudo_programatico); ?><h5>
+                        <p><?php echo nl2br($publico); ?><p>
                     </div>
                     <!-- tab 2 -->
                     <div class="tab-pane fade" id="solution" role="tabpanel" aria-labelledby="solution-tab">
@@ -329,12 +332,12 @@ if (isset($_GET['curso_id'])) {
                             $get_curso = "select * from livros where id='$curso_id'";
                             $query_curso = mysqli_query($con, $get_curso);
                             $rs = mysqli_fetch_array($query_curso);
-                            $conteudo_programatico = $rs['conteudo'];
+                            $conteudo_programatico = nl2br($rs['conteudo']);
 
                         }
                         ?>
 
-                        <h5><?php echo nl2br($conteudo_programatico); ?><h5>
+                        <p><?php echo $conteudo_programatico; ?><p>
 
                     </div>
 
@@ -347,11 +350,11 @@ if (isset($_GET['curso_id'])) {
                             $get_curso = "select * from livros where id='$curso_id'";
                             $query_curso = mysqli_query($con, $get_curso);
                             $rs = mysqli_fetch_array($query_curso);
-                                $sumario = $rs['sumario'];
+                                $sumario = nl2br($rs['sumario']);
 
                         }
                         ?>
-                        <h5><?php echo nl2br($sumario); ?></h5>
+                        <p><?php echo $sumario; ?></p>
 
                     </div>
 

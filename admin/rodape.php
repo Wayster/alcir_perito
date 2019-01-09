@@ -188,3 +188,76 @@
 
     </div>
 </div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <div class="panel-title">
+            <h3>inserir link para redes social</h3>
+        </div>
+    </div>
+    <div class="panel-body">
+        <div class="col-lg-4">
+            <center><i class="fab fa-facebook fa-4x"></i><br>
+                <form action="" method="post" enctype="multipart/form-data">
+                    <textarea name="link_face" cols="20" rows="4"></textarea> <br>
+                    <button name="save_face" type="submit" class="btn btn-primary">inserir</button>
+                </form>
+        </div>
+        <div class="col-lg-4">
+            <center><i class="fab fa-instagram fa-4x"></i><br>
+                <form action="" method="post" enctype="multipart/form-data">
+                    <textarea name="link_insta" cols="20" rows="4"></textarea> <br>
+                    <button name="save_insta" type="submit" class="btn btn-primary">inserir</button>
+                </form>
+        </div>
+        <div class="col-lg-4">
+            <center><i class="fab fa-linkedin fa-4x"></i><br>
+                <form action="" method="post" enctype="multipart/form-data">
+                    <textarea name="link_link" cols="20" rows="4"></textarea> <br>
+                    <button name="save_linkedlin" type="submit" class="btn btn-primary">inserir</button>
+                </form>
+        </div>
+    </div>
+</div>
+
+<?php
+include ('../includes/db.php');
+if (isset($_POST['save_face'])){
+    $link = $_POST['link_face'];
+    $update = "update social_media set facebook='$link'";
+    $query = mysqli_query($con, $update);
+    if ($query){
+        echo '<script>alert("Registrado com Sucesso")</script>';
+        exit;
+    }
+}
+
+?>
+
+<?php
+include ('../includes/db.php');
+if (isset($_POST['save_insta'])){
+    $link = $_POST['link_insta'];
+    $update = "update social_media set instagram='$link'";
+    $query = mysqli_query($con, $update);
+    if ($query){
+        echo '<script>alert("Registrado com Sucesso")</script>';
+        exit;
+    }
+}
+
+?>
+
+<?php
+include ('../includes/db.php');
+if (isset($_POST['save_linkedlin'])){
+    $link = $_POST['link_link'];
+    $update = "update social_media set linkedlin='$link'";
+    $query = mysqli_query($con, $update);
+    if ($query){
+        echo '<script>alert("Registrado com Sucesso")</script>';
+        exit;
+    }
+}
+
+?>
