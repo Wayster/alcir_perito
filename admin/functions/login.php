@@ -21,7 +21,7 @@ if(isset($_POST['admin_login'])){
         $_SESSION['senha']= $_POST['senha'];
 
         echo "<script>alert('LOGIN FEITO COM SUCESSO')</script>";
-        echo "<script>window.open('../painel.php','_self')</script>";
+        echo "<script>window.open('../painel.php?initial','_self')</script>";
     }
     else {
 

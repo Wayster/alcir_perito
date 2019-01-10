@@ -1,6 +1,6 @@
 <?php
 
- $db = mysqli_connect("localhost", "root", "deus", "alcir_perito");
+ $db = mysqli_connect("localhost", "root", "deus", "u728536737_teste");
 
 function getRealIp(){
     switch(true){

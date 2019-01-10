@@ -1,14 +1,13 @@
 <?php
 
 include ("../includes/db.php");
-
 ?>
 
 
 <div class="panel panel-default">
     <div class="panel-heading">
         <div class="panel-title">
-            <h3>Texto Atual</h3>
+            <h1 class="panel-title"><i class="fa fa-edit"> </i> titulo e descricao dos servicos</h1>
         </div>
     </div>
 </div>
@@ -67,7 +66,35 @@ include ("../includes/db.php");
     </div>
 </div><!-- our office and services-->
 
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h1 class="panel-title"><i class="fa fa-edit"> </i> titulo ultimos cursos adicionados</h1>
+    </div>
+    <div class="panel-body">
 
+        <!-- Our Featured Wrapper Start -->
+        <div class="featured-wrapper">
+            <div class="container-fluid">
+                <div class="section-title">
+                    <form action="" method="post" enctype="multipart/form-data">
+                    <h2 data-aos="fade-down-left" data-aos-duration="2000">
+                        <?php
+                            $sql = "select * from coluna1";
+                            $query = mysqli_query($con, $sql);
+                            $rs = mysqli_fetch_array($query);
+                            $title1 = $rs['title_newcurses'];
+                        ?>
+                        <textarea name="title1" cols="80"><?php echo $title1;?></textarea>
+                    </h2>
+                    <button type="submit" name="save_title" class="btn btn-success">atualizar</button>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+        <!-- Our Featured Wrapper Start -->
+    </div>
+</div>
 
 <?php
 
@@ -110,5 +137,23 @@ if (isset($_POST['save'])){
     }
 }
 
+
+?>
+
+
+<?php
+
+if (isset($_POST['save_title'])){
+    $title = $_POST['title1'];
+    $update = "update coluna1 set title_newcurses='$title'";
+    $query = mysqli_query($con, $update);
+    if ($query){
+        echo "<script>alert('Texto Alterado com Sucesso')</script>";
+        echo "<script>window.open('painel.php?coluna1', '_self')</script>";
+    }else {
+        echo "<script>alert('Erro ao Alterar Texto')</script>";
+        echo "<script>window.open('painel.php?coluna1', '_self')</script>";
+    }
+}
 
 ?>

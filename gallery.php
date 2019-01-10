@@ -125,20 +125,9 @@ include ('functions/functions.php');
                     ";
                 }
             ?>
-
-
-
-
-        </div>
-        <div class="row">
-            <div class="col-12">
-                <!--See More Button Start-->
-                <div class="see-more-btn"> <a href="#">carregar mais</a> </div>
-                <!--See More Button End-->
-            </div>
         </div>
     </div>
 </div>
 
-                <script src="js/lightbox.min.js"></script>
+ <script src="js/lightbox.min.js"></script>
 <?php include('includes/footer.php') ?>

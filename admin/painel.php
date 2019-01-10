@@ -316,6 +316,10 @@ if(!isset($_SESSION["email"]) || !isset($_SESSION["senha"])){
                     if (isset($_GET['pag_livro'])){
                         include ('pagamentos_livros.php');
                     }
+                    if (isset($_GET['initial'])) {
+                        include ("initial.php");
+                    }
+
 
                     ?>
 
